@@ -77,10 +77,10 @@ mlearning <- function (formula, data, method, model.args, call = match.call(),
 		response <- NULL
 		lev <- NULL
 		type <- "unsupervised"
-	} else { # Supervised classification or regression
+	} else {# Supervised classification or regression
 		response.label <- deparse(attr(model.terms, "variables")
 			[[response.pos + 1]])
-		response <- data[, response.label]
+		response <- data[[response.label]]
 		if (is.factor(response)) {
 			lev <- levels(response)
 			response <- droplevels(response)
