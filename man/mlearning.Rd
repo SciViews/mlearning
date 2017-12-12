@@ -88,7 +88,7 @@ mlNnet(...)
 \method{mlNnet}{default}(train, response, size = NULL, rang = NULL, decay = 0, maxit = 1000, ...)
 \method{mlNnet}{formula}(formula, data, size = NULL, rang = NULL, decay = 0, maxit = 1000, ...,
     subset, na.action)
-\method{predict}{mlNnet}(object, newdata, type = c("class", "membership", "both"),
+\method{predict}{mlNnet}(object, newdata, type = c("class", "membership", "both", "raw"),
     method = c("direct", "cv"), na.action = na.exclude,...)
 
 mlLvq(...)
@@ -352,7 +352,7 @@ confusion(res) # Self-consistency
 set.seed(34)
 summary(ozone.nnet <- mlNnet(Ozone ~ ., data = airquality, na.action = na.omit,
     skip = TRUE, decay = 1e-3, size = 20, linout = TRUE))
-plot(na.omit(airquality)$Ozone, predict(ozone.nnet))
+plot(na.omit(airquality)$Ozone, predict(ozone.nnet, type = "raw"))
 abline(a = 0, b = 1)
 
 

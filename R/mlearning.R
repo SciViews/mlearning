@@ -824,7 +824,7 @@ maxit = 1000, ...)
 }
 
 predict.mlNnet <- function(object, newdata,
-  type = c("class", "membership", "both"), method = c("direct", "cv"),
+  type = c("class", "membership", "both", "raw"), method = c("direct", "cv"),
   na.action = na.exclude, ...)
 {
   if (!inherits(object, "mlNnet"))
@@ -868,6 +868,8 @@ predict.mlNnet <- function(object, newdata,
     proba <- predict(object, newdata = newdata, type = "raw", ...)
   if (type == "class" || type == "both")
     res <- predict(object, newdata = newdata, type = "class", ...)
+  if (type == "raw")
+    res <- predict(object, newdata = newdata, type = "raw", ...)
 
     ## Rework results according to what we want
   switch(type,
@@ -879,7 +881,8 @@ predict.mlNnet <- function(object, newdata,
       levels = levels(object)), n, ndrop),
       membership = .expandMatrix(.membership(proba, levels = levels(object)),
         n, ndrop)),
-    stop("unrecognized 'type' (must be 'class', 'membership' or 'both')"))
+    raw = res,
+    stop("unrecognized 'type' (must be 'class', 'membership', 'both' or 'raw')"))
 }
 
 mlLvq <- function (...)
