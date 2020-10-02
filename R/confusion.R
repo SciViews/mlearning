@@ -723,7 +723,7 @@ decreasing = TRUE, ...)
 	}
 
 	## What type of results should we return?
-	if (length(type) && type != "all") {
+	if (length(type) && type[1] != "all") {
 		okType <- type[type %in% names(res)]
 		if (!length(okType)) stop("Wrong type specified")
 		if (length(okType) < length(type))

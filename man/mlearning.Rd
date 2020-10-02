@@ -63,35 +63,35 @@ cvpredict(object, ...)
 \method{cvpredict}{mlearning}(object, type = c("class", "membership", "both"),
     cv.k = 10, cv.strat = TRUE, ...)
 
-mlLda(...)
+mlLda(train, ...)
 \method{mlLda}{default}(train, response, ...)
 \method{mlLda}{formula}(formula, data, ..., subset, na.action)
 \method{predict}{mlLda}(object, newdata, type = c("class", "membership", "both",
     "projection"), prior = object$prior, dimension,
     method = c("plug-in", "predictive", "debiased", "cv"), ...)
 
-mlQda(...)
+mlQda(train, ...)
 \method{mlQda}{default}(train, response, ...)
 \method{mlQda}{formula}(formula, data, ..., subset, na.action)
 \method{predict}{mlQda}(object, newdata, type = c("class", "membership", "both"),
     prior = object$prior, method = c("plug-in", "predictive", "debiased",
     "looCV", "cv"), ...)
 
-mlRforest(...)
+mlRforest(train, ...)
 \method{mlRforest}{default}(train, response, ntree = 500, mtry, replace = TRUE, classwt = NULL, ...)
 \method{mlRforest}{formula}(formula, data, ntree = 500, mtry, replace = TRUE, classwt = NULL, ...,
     subset, na.action)
 \method{predict}{mlRforest}(object, newdata, type = c("class", "membership", "both",
     "vote"), method = c("direct", "oob", "cv"), ...)
 
-mlNnet(...)
+mlNnet(train, ...)
 \method{mlNnet}{default}(train, response, size = NULL, rang = NULL, decay = 0, maxit = 1000, ...)
 \method{mlNnet}{formula}(formula, data, size = NULL, rang = NULL, decay = 0, maxit = 1000, ...,
     subset, na.action)
 \method{predict}{mlNnet}(object, newdata, type = c("class", "membership", "both", "raw"),
     method = c("direct", "cv"), na.action = na.exclude,...)
 
-mlLvq(...)
+mlLvq(train, ...)
 \method{mlLvq}{default}(train, response, k.nn = 5, size, prior, algorithm = "olvq1", ...)
 \method{mlLvq}{formula}(formula, data, k.nn = 5, size, prior, algorithm = "olvq1", ...,
     subset, na.action)
@@ -100,7 +100,7 @@ mlLvq(...)
 \method{predict}{mlLvq}(object, newdata, type = "class", method = c("direct", "cv"),
     na.action = na.exclude,...)
 
-mlSvm(...)
+mlSvm(train, ...)
 \method{mlSvm}{default}(train, response, scale = TRUE, type = NULL, kernel = "radial",
     classwt = NULL, ...)
 \method{mlSvm}{formula}(formula, data, scale = TRUE, type = NULL, kernel = "radial",
@@ -108,7 +108,7 @@ mlSvm(...)
 \method{predict}{mlSvm}(object, newdata, type = c("class", "membership", "both"),
     method = c("direct", "cv"), na.action = na.exclude, ...)
 
-mlNaiveBayes(...)
+mlNaiveBayes(train, ...)
 \method{mlNaiveBayes}{default}(train, response, laplace = 0, ...)
 \method{mlNaiveBayes}{formula}(formula, data, laplace = 0, ..., subset, na.action)
 \method{predict}{mlNaiveBayes}(object, newdata, type = c("class", "membership", "both"),

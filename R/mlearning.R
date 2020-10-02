@@ -22,6 +22,7 @@ mlearning <- function (formula, data, method, model.args, call = match.call(),
 	## Get data and initial number of cases
 	if (missing(data))
 	  data <- eval.parent(model.args$data)
+	data <- as.data.frame(data)
 	nobs <- NROW(data)
 
 	## Special case for formula like response ~ . which speeds up calc and
@@ -434,7 +435,7 @@ cv.k = 10, cv.strat = TRUE, ...)
 }
 
 ## Note: ldahist() in MASS (when only one LD) seems to be broken!
-mlLda <- function (...)
+mlLda <- function (train, ...)
 	UseMethod("mlLda")
 
 mlLda.formula <- function (formula, data, ..., subset, na.action)
@@ -532,7 +533,7 @@ dimension, method = c("plug-in", "predictive", "debiased", "cv"), ...)
 		stop("unrecognized 'type' (must be 'class', 'membership', 'both' or 'projection')"))
 }
 
-mlQda <- function (...)
+mlQda <- function (train, ...)
 	UseMethod("mlQda")
 
 mlQda.formula <- function (formula, data, ..., subset, na.action)
@@ -617,7 +618,7 @@ prior = object$prior, method = c("plug-in", "predictive", "debiased", "looCV",
 		stop("unrecognized 'type' (must be 'class', 'membership' or 'both')"))
 }
 
-mlRforest <- function (...)
+mlRforest <- function (train, ...)
 	UseMethod("mlRforest")
 
 mlRforest.formula <- function (formula, data, ntree = 500, mtry,
@@ -733,7 +734,7 @@ type = c("class", "membership", "both", "vote"), method = c("direct", "oob", "cv
 		type = type, norm.votes = FALSE, ...)
 }
 
-mlNnet <- function (...)
+mlNnet <- function (train, ...)
 	UseMethod("mlNnet")
 
 mlNnet.formula <- function (formula, data, size = NULL, rang = NULL, decay = 0,
@@ -886,7 +887,7 @@ predict.mlNnet <- function(object, newdata,
     stop("unrecognized 'type' (must be 'class', 'membership', 'both' or 'raw')"))
 }
 
-mlLvq <- function (...)
+mlLvq <- function (train, ...)
 	UseMethod("mlLvq")
 
 mlLvq.formula <- function (formula, data, k.nn = 5, size, prior,
@@ -1039,7 +1040,7 @@ method = c("direct", "cv"), na.action = na.exclude, ...)
 }
 
 ## svm from e1071 package
-mlSvm <- function (...)
+mlSvm <- function (train, ...)
 	UseMethod("mlSvm")
 
 mlSvm.formula <- function(formula, data, scale = TRUE, type = NULL,
@@ -1145,7 +1146,7 @@ na.action = na.exclude, ...)
 }
 
 ## NaiveBayes from e1071 package
-mlNaiveBayes <- function (...)
+mlNaiveBayes <- function (train, ...)
 	UseMethod("mlNaiveBayes")
 
 mlNaiveBayes.formula <- function(formula, data, laplace = 0, ...,
@@ -1246,7 +1247,7 @@ predict.mlNaiveBayes <- function(object, newdata,
 
 ## NaiveBayes from RWeka package
 ## TODO: keep this for mlearningWeka package!
-#mlNaiveBayesWeka <- function (...)
+#mlNaiveBayesWeka <- function (train, ...)
 #	UseMethod("mlNaiveBayesWeka")
 #
 #mlNaiveBayesWeka.formula <- function(formula, data, ..., subset, na.action)
