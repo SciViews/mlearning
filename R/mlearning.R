@@ -20,7 +20,8 @@ mlearning <- function (formula, data, method, model.args, call = match.call(),
 			subset = substitute(subset))
 
 	## Get data and initial number of cases
-	data <- eval.parent(model.args$data)
+	if (missing(data))
+	  data <- eval.parent(model.args$data)
 	nobs <- NROW(data)
 
 	## Special case for formula like response ~ . which speeds up calc and

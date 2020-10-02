@@ -1,8 +1,8 @@
 Package: mlearning
 Type: Package
 Title: Machine learning algorithms with unified interface and confusion matrices
-Version: 1.0.3
-Date: 2017-12-12
+Version: 1.0.4
+Date: 2020-10-02
 Author: Philippe Grosjean [aut, cre],
   Kevin Denis [aut]
 Authors@R: c(person("Philippe", "Grosjean", role = c("aut", "cre"),
