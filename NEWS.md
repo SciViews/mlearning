@@ -1,5 +1,10 @@
 # mlearning News
 
+## Change in mlearning 1.0.5
+
+* In `mlLvq()` providing `size =` or `prior =` led to an `lvq` object not found
+message. Corrected.
+
 ## Changes in mlearning 1.0.4
 
 * Sometines, data was not found (e.g., when called inside a learnr).

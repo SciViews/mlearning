@@ -901,7 +901,7 @@ algorithm = "olvq1", ..., subset, na.action)
 				algorithm = algorithm, ...,
 				subset = subset, na.action = substitute(na.action))
 		} else {
-			mlearning(formula, data = data, method = "lvq", model.args =
+			mlearning(formula, data = data, method = "mlLvq", model.args =
 				list(formula  = formula, data = substitute(data),
 				subset = substitute(subset)), call = match.call(), k.nn = k.nn,
 				prior = prior, algorithm = algorithm, ...,
@@ -909,13 +909,13 @@ algorithm = "olvq1", ..., subset, na.action)
 		}
 	} else {
 		if (missing(prior)) {
-			mlearning(formula, data = data, method = "lvq", model.args =
+			mlearning(formula, data = data, method = "mlLvq", model.args =
 				list(formula  = formula, data = substitute(data),
 				subset = substitute(subset)), call = match.call(), k.nn = k.nn,
 				size = size, algorithm = algorithm, ...,
 				subset = subset, na.action = substitute(na.action))
 		} else {
-			mlearning(formula, data = data, method = "lvq", model.args =
+			mlearning(formula, data = data, method = "mlLvq", model.args =
 				list(formula  = formula, data = substitute(data),
 				subset = substitute(subset)), call = match.call(), k.nn = k.nn,
 				size = size, prior = prior, algorithm = algorithm, ...,
