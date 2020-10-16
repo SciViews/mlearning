@@ -349,6 +349,9 @@ cv.k = 10, cv.strat = TRUE, ...)
 	## Create data, using numbers are rownames
 	data <- data.frame(.response. = response(object), train(object))
 	rn <- rownames(data)
+	if (is.null(rn)) {
+	  rn <- 1:NROW(data)
+	}
 	rownames(data) <- 1:NROW(data)
 
 	## The predict() method with ... arguments added to the call
@@ -396,6 +399,7 @@ cv.k = 10, cv.strat = TRUE, ...)
 		ord <- as.numeric(rownames(membership))
 		## Sometimes, errorest() duplicates one or two items in two models
 		## (rounding errors?) => eliminate them here
+		## Note: commented out, because it does not work with mlSvm()!
 		notDup <- !duplicated(ord)
 		membership <- membership[notDup, ]
 		ord <- ord[notDup]
@@ -1048,7 +1052,8 @@ kernel = "radial", classwt = NULL, ..., subset, na.action)
 	mlearning(formula, data = data, method = "mlSvm", model.args =
 		list(formula  = formula, data = substitute(data),
 		subset = substitute(subset)), call = match.call(),
-		..., subset = subset, na.action = substitute(na.action))
+		scale = scale, type = type, kernel = kernel, classwt = classwt, ...,
+	  subset = subset, na.action = substitute(na.action))
 
 mlSvm.default <- function (train, response, scale = TRUE, type = NULL,
 kernel = "radial", classwt = NULL, ...)

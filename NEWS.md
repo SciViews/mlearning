@@ -1,5 +1,10 @@
 # mlearning News
 
+## Change in mlearning 1.0.6
+
+* In `mlSvm.formula()`, arguments `scale=`, `type=`, `kernel=` and `classwt=`
+were not correctly used. Corrected.
+
 ## Change in mlearning 1.0.5
 
 * In `mlLvq()` providing `size =` or `prior =` led to an `lvq` object not found
