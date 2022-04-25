@@ -66,6 +66,30 @@
       
     </div>
 
+    <div class="section level2">
+<h2 class="page-header" data-toc-text="1.1.0" id="mlearning-110">mlearning 1.1.0<a class="anchor" aria-label="anchor" href="#mlearning-110"></a></h2>
+<ul><li><p>mlKnn() is implemented for K-nearest neigbour.</p></li>
+<li><p>Several adjustments were required for compatibility with R 4.2.0 (it is not allowed any more to use vectors &gt; 1 with || and &amp;&amp;).</p></li>
+</ul></div>
+    <div class="section level2">
+<h2 class="page-header" data-toc-text="1.0.7" id="mlearning-107">mlearning 1.0.7<a class="anchor" aria-label="anchor" href="#mlearning-107"></a></h2>
+<ul><li>When <code><a href="https://rdrr.io/r/stats/predict.html" class="external-link">predict()</a></code> was applied to an mlearning object build with full formula (not the short one <code>var ~ .</code>), if the dependent variable was not in <code>newdata =</code>, an error message was raised (although this variable is not necessary at this point). Bug identified by Damien Dumont, and corrected.</li></ul></div>
+    <div class="section level2">
+<h2 class="page-header" data-toc-text="1.0.6" id="mlearning-106">mlearning 1.0.6<a class="anchor" aria-label="anchor" href="#mlearning-106"></a></h2>
+<ul><li>In <code><a href="../reference/mlearning.html">mlSvm.formula()</a></code>, arguments <code>scale=</code>, <code>type=</code>, <code>kernel=</code> and <code>classwt=</code> were not correctly used. Corrected.</li></ul></div>
+    <div class="section level2">
+<h2 class="page-header" data-toc-text="1.0.5" id="mlearning-105">mlearning 1.0.5<a class="anchor" aria-label="anchor" href="#mlearning-105"></a></h2>
+<ul><li>In <code><a href="../reference/mlearning.html">mlLvq()</a></code> providing <code>size =</code> or <code>prior =</code> led to an <code>lvq</code> object not found message. Corrected.</li></ul></div>
+    <div class="section level2">
+<h2 class="page-header" data-toc-text="1.0.4" id="mlearning-104">mlearning 1.0.4<a class="anchor" aria-label="anchor" href="#mlearning-104"></a></h2>
+<ul><li><p>Sometines, data was not found (e.g., when called inside a learnr).</p></li>
+<li><p>In mlearning(), data is forced with <code><a href="https://rdrr.io/r/base/as.data.frame.html" class="external-link">as.data.frame()</a></code> (tibbles are not supported internally).</p></li>
+<li><p>In the <code>mlXXX()</code> function, it was not possible to indicate something like <code>mlLda(data = iris, Species ~ .)</code>. Solved by adding <code>train =</code> argument in <code>mlXXX()</code>.</p></li>
+<li><p>In <code><a href="../reference/confusion.html">summary.confusion()</a></code> produced an error if more than one <code>type =</code> was provided.</p></li>
+</ul></div>
+    <div class="section level2">
+<h2 class="page-header" data-toc-text="1.0.3" id="mlearning-103">mlearning 1.0.3<a class="anchor" aria-label="anchor" href="#mlearning-103"></a></h2>
+<ul><li>NEWS.md file added. Repository moved to Github.</li></ul></div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
