@@ -1,8 +1,8 @@
 Package: mlearning
 Type: Package
 Title: Machine learning algorithms with unified interface and confusion matrices
-Version: 1.0.6
-Date: 2020-10-05
+Version: 1.1.0
+Date: 2022-03-08
 Author: Philippe Grosjean [aut, cre],
   Kevin Denis [aut]
 Authors@R: c(person("Philippe", "Grosjean", role = c("aut", "cre"),
@@ -16,4 +16,4 @@ Suggests: mlbench, datasets, RColorBrewer
 Description: This package provides a unified interface to various machine
     learning algorithms. Confusion matrices are provided too.
 License: GPL (>= 2)
-URL: http://www.sciviews.org/zooimage
+URL: https://www.sciviews.org/zooimage/
