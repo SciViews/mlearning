@@ -1,24 +1,22 @@
-# mlearning News
-
-## Changes in mlearning 1.1.0
+# mlearning 1.1.0
 
 -   mlKnn() is implemented for K-nearest neigbour.
 
 -   Several adjustments were required for compatibility with R 4.2.0 (it is not allowed any more to use vectors \> 1 with \|\| and &&).
 
-## Change in mlearning 1.0.7
+# mlearning 1.0.7
 
 -   When `predict()` was applied to an mlearning object build with full formula (not the short one `var ~ .`), if the dependent variable was not in `newdata =`, an error message was raised (although this variable is not necessary at this point). Bug identified by Damien Dumont, and corrected.
 
-## Change in mlearning 1.0.6
+# mlearning 1.0.6
 
 -   In `mlSvm.formula()`, arguments `scale=`, `type=`, `kernel=` and `classwt=` were not correctly used. Corrected.
 
-## Change in mlearning 1.0.5
+# mlearning 1.0.5
 
 -   In `mlLvq()` providing `size =` or `prior =` led to an `lvq` object not found message. Corrected.
 
-## Changes in mlearning 1.0.4
+# mlearning 1.0.4
 
 -   Sometines, data was not found (e.g., when called inside a learnr).
 
@@ -28,6 +26,6 @@
 
 -   In `summary.confusion()` produced an error if more than one `type =` was provided.
 
-## Changes in mlearning 1.0.3
+# mlearning 1.0.3
 
 -   NEWS.md file added. Repository moved to Github.
