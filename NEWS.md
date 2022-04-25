@@ -1,6 +1,6 @@
 # mlearning 1.1.0
 
--   mlKnn() is implemented for K-nearest neigbour.
+-   mlKnn() is implemented for K-nearest neigbours.
 
 -   Several adjustments were required for compatibility with R 4.2.0 (it is not allowed any more to use vectors \> 1 with \|\| and &&).
 

@@ -1312,3 +1312,104 @@ na.action = na.exclude, threshold = 0.001, eps = 0, ...) {
 #    algorithm = "Weka naive Bayes classifier",
 #    class = c("mlNaiveBayesWeka", "mlearning", "Weka_classifier"))
 #}
+
+mlKnn <- function(train, ...)
+  UseMethod("mlKnn")
+
+mlKnn.formula <- function(formula, data, k.nn = 5, ..., subset, na.action) {
+  mlearning(formula, data = data, method = "mlKnn", model.args =
+      list(formula  = formula, data = substitute(data),
+        subset = substitute(subset)), call = match.call(), k.nn = k.nn, ...,
+    subset = subset, na.action = substitute(na.action))
+}
+
+mlKnn.default <- function(train, response, k.nn = 5, ...) {
+  if (!is.factor(response))
+    stop("only factor response (classification) accepted for mlKnn")
+
+  dots <- list(...)
+  .args. <- dots$.args.
+  dots$.args. <- NULL
+  dots$k.nn <- k.nn
+  if (!length(.args.))
+    .args. <- list(levels = levels(response),
+      n = c(intial = NROW(train), final = NROW(train)),
+      type = "classification", na.action = "na.pass",
+      mlearning.call = match.call(), method = "mlKnn")
+
+  # matrix of numeric values
+  if (any(sapply(train, is.factor))) {
+    warning("force conversion from factor to numeric; may be not optimal or suitable")
+    train <- sapply(train, as.numeric)
+  }
+
+  # Create an object similar to the one obtained with ipred::ipredknn
+  res <- list(learn = list(y = response, X = train))
+  res$k <- k.nn
+  class(res) <- "simpleKnn"
+
+  # Return a mlearning object
+  structure(res, formula = .args.$formula, train = train,
+    response = response, levels = .args.$levels, n = .args.$n, args = dots,
+    optim = .args.$optim, numeric.only = TRUE, type = .args.$type,
+    pred.type = c(class = "class", prob = "prob"), summary = NULL,
+    na.action = .args.$na.action,
+    mlearning.call = .args.$mlearning.call, method = .args.$method,
+    algorithm = "k-nearest neighbours",
+    class = c("mlKnn", "mlearning", class(res)))
+}
+
+#summary.mlKnn <- function(object, ...)
+#  structure(cbind(Class = object$cl, as.data.frame(object$x)),
+#    class = c("summary.mlKnn", "data.frame"))
+
+#print.summary.mlKnn <- function(x, ...) {
+#  cat("Train dataset:\n")
+#  print(as.data.frame(x))
+#  invisible(x)
+#}
+
+predict.mlKnn <- function(object, newdata,
+  type = c("class", "prob", "both"),
+  method = c("direct", "cv"), na.action = na.exclude, ...) {
+  if (!inherits(object, "mlKnn"))
+    stop("'object' must be a 'mlKnn' object")
+
+  # If method == "cv", delegate to cvpredict()
+  method <- as.character(method)[1]
+  if (method == "cv") {
+    if (!missing(newdata))
+      stop("cannot handle new data with method = 'cv'")
+    return(cvpredict(object = object, type = type, na.action = na.action, ...))
+  }
+
+  # Recalculate newdata according to formula...
+  if (missing(newdata))
+    newdata <- object$learn$X # Use train
+  # Use model.frame but eliminate dependent variable, not required
+  # (second item in the formula)
+  newdata <- model.frame(formula = attr(object, "formula")[-2],
+    data = newdata, na.action = na.pass)[, names(object$learn$X)]
+  # Only numerical predictors
+  newdata <- sapply(as.data.frame(newdata), as.numeric)
+
+  # Determine how many data and perform na.action
+  n <- NROW(newdata)
+  newdata <- match.fun(na.action)(newdata)
+  ndrop <- attr(newdata, "na.action")
+
+  if (inherits(object, "simpleKnn")) {
+    res <- class::knn(object$learn$X, newdata, object$learn$y, k = object$k,
+      prob = TRUE)
+  } else {# ipred::ipredknn
+    res <- ipred::predict.ipredknn(object, newdata, type = "class")
+  }
+  type <- as.character(type[1])
+  if (type == "prob") {
+    return(attr(res, "prob"))
+  } else if (type == "class") {
+    attr(res, "prob") <- NULL
+  }
+
+  .expandFactor(res, n, ndrop)
+}

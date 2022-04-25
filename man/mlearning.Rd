@@ -25,6 +25,10 @@
 \alias{mlNnet.default}
 \alias{mlNnet.formula}
 \alias{predict.mlNnet}
+\alias{mlKnn}
+\alias{mlKnn.default}
+\alias{mlKnn.formula}
+\alias{predict.mlKnn}
 \alias{mlLvq}
 \alias{mlLvq.default}
 \alias{mlLvq.formula}
@@ -89,6 +93,12 @@ mlNnet(train, ...)
 \method{mlNnet}{formula}(formula, data, size = NULL, rang = NULL, decay = 0, maxit = 1000, ...,
     subset, na.action)
 \method{predict}{mlNnet}(object, newdata, type = c("class", "membership", "both", "raw"),
+    method = c("direct", "cv"), na.action = na.exclude,...)
+
+mlKnn(train, ...)
+\method{mlKnn}{default}(train, response, k.nn = 5, ...)
+\method{mlKnn}{formula}(formula, data, k.nn = 5, ..., subset, na.action)
+\method{predict}{mlKnn}(object, newdata, type = c("class", "prob", "both"),
     method = c("direct", "cv"), na.action = na.exclude,...)
 
 mlLvq(train, ...)
@@ -193,7 +203,7 @@ train(object, ...)
     computed. }
   \item{decay}{ parameter for weight decay. Default 0. }
   \item{maxit}{ maximum number of iterations. Default 1000. }
-  \item{k.nn}{ k used for k-NN test of correct classification. Default is 5. }
+  \item{k.nn}{ k used for k-NN number of neighbour considered. Default is 5. }
   \item{algorithm}{ an algorithm among 'olvq1' (default, the optimized lvq1),
     'lvq1', 'lvq2', or 'lvq3'. }
   \item{scale}{ are all the variables scaled? If a vector is provided, it is
@@ -354,6 +364,13 @@ summary(ozone.nnet <- mlNnet(Ozone ~ ., data = airquality, na.action = na.omit,
     skip = TRUE, decay = 1e-3, size = 20, linout = TRUE))
 plot(na.omit(airquality)$Ozone, predict(ozone.nnet, type = "raw"))
 abline(a = 0, b = 1)
+
+
+## Supervised classification using k-nearest neighbours
+summary(res <- mlKnn(Species ~ ., data = irisTrain))
+predict(res) # This object only returns class
+confusion(res) # Self-consistency
+confusion(predict(res, newdata = irisTest), irisTest$Species) # Test set perfs
 
 
 ## Supervised classification using learning vector quantization

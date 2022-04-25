@@ -6,7 +6,7 @@
 
 <!-- badges: end -->
 
-{mlearning} rovides a unified interface to various machine learning algorithms. Confusion matrices are provided too.
+{mlearning} provides a unified interface to various machine learning algorithms. Confusion matrices are provided too.
 
 ## Installation
 
