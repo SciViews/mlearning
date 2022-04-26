@@ -1,8 +1,8 @@
 Package: mlearning
 Type: Package
-Title: Machine learning algorithms with unified interface and confusion matrices
-Version: 1.1.0
-Date: 2022-04-25
+Title: Machine Learning Algorithms with Unified Interface and Confusion Matrices
+Version: 1.1.1
+Date: 2022-04-26
 Author: Philippe Grosjean [aut, cre],
   Kevin Denis [aut]
 Authors@R: c(person("Philippe", "Grosjean", role = c("aut", "cre"),
@@ -13,7 +13,12 @@ Maintainer: Philippe Grosjean <phgrosjean@sciviews.org>
 Depends: R (>= 3.0.4)
 Imports: stats, grDevices, class, nnet, MASS, e1071, randomForest, ipred
 Suggests: mlbench, datasets, RColorBrewer
-Description: This package provides a unified interface to various machine
-    learning algorithms. Confusion matrices are provided too.
+Description: A unified interface is provided to various machine learning
+  algorithms like LDA, QDA, k-nearest neighbour, LVQ, random forest, SVM, ... It
+  allows to train, test, and apply cross-validation using similar functions and
+  function arguments with a minimalist and clean, formula-based interface.
+  Missing data are threated the same way as base and stats R functions for all
+  algorithms, both in training and testing. Confusion matrices are also provided
+  with a rich set of metrics calculated and a few specific plots.
 License: GPL (>= 2)
-URL: https://www.sciviews.org/zooimage/
+URL: https://www.sciviews.org/mlearning/

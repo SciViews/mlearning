@@ -1,3 +1,9 @@
+# mlearning 1.1.1
+
+-   The description is extended.
+
+-   A {pkgdown} site is added.
+
 # mlearning 1.1.0
 
 -   mlKnn() is implemented for K-nearest neigbours.
