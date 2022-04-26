@@ -1355,7 +1355,7 @@ mlKnn.default <- function(train, response, k.nn = 5, ...) {
     pred.type = c(class = "class", prob = "prob"), summary = NULL,
     na.action = .args.$na.action,
     mlearning.call = .args.$mlearning.call, method = .args.$method,
-    algorithm = "k-nearest neighbours",
+    algorithm = "k-nearest neighbors",
     class = c("mlKnn", "mlearning", class(res)))
 }
 

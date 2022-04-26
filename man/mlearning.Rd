@@ -194,16 +194,16 @@ train(object, ...)
   \item{replace}{ sample cases with or without replacement? }
   \item{classwt}{ priors of the classes. Need not add up to one. }
   \item{size}{ number of units in the hidden layer for \code{mlNnet()}. Can be
-    zero if there are skip-layer units. If \code{NULL}, a reasonalbe default is
+    zero if there are skip-layer units. If \code{NULL}, a reasonable default is
     computed. for \code{mlLvq()}, the size of the codebook. Defaults to
     min(round(0.4*ng*(ng-1 + p/2),0), n) where ng is the number of classes.}
   \item{rang}{ initial random weights on [-rang, rang]. Value about 0.5 unless
     the inputs are large, in which case it should be chosen so that
-    rang * max(|x|) is about 1. If \code{NULL}, a reasonalbe default is
+    rang * max(|x|) is about 1. If \code{NULL}, a reasonable default is
     computed. }
   \item{decay}{ parameter for weight decay. Default 0. }
   \item{maxit}{ maximum number of iterations. Default 1000. }
-  \item{k.nn}{ k used for k-NN number of neighbour considered. Default is 5. }
+  \item{k.nn}{ k used for k-NN number of neighbor considered. Default is 5. }
   \item{algorithm}{ an algorithm among 'olvq1' (default, the optimized lvq1),
     'lvq1', 'lvq2', or 'lvq3'. }
   \item{scale}{ are all the variables scaled? If a vector is provided, it is
@@ -215,7 +215,7 @@ train(object, ...)
   \item{threshold}{ Value replacing cells with probabilities within 'eps' range
     for Naive Bayes predictions. }
   \item{eps}{ double for specifying an epsilon-range to apply laplace smoothing
-    (to replace zero or close-zero probabilities by 'theshold') for Naive Bayes
+    (to replace zero or close-zero probabilities by 'threshold') for Naive Bayes
     predictions. }
 }
 
@@ -223,7 +223,7 @@ train(object, ...)
   A machine learning object where the \code{predict()} method can be applied
   to classify new items.
 
-  For \code{response()} and \code{train()}, the respective resmonse vector and
+  For \code{response()} and \code{train()}, the respective response vector and
   training matrix (the matrix with all predicting terms).
 }
 
@@ -366,7 +366,7 @@ plot(na.omit(airquality)$Ozone, predict(ozone.nnet, type = "raw"))
 abline(a = 0, b = 1)
 
 
-## Supervised classification using k-nearest neighbours
+## Supervised classification using k-nearest neighbors
 summary(res <- mlKnn(Species ~ ., data = irisTrain))
 predict(res) # This object only returns class
 confusion(res) # Self-consistency

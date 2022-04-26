@@ -18,9 +18,9 @@
 \title{ Construct and analyze confusion matrices }
 \description{
   Confusion matrices compare two classifications (usually one done automatically
-  using a machine learning algorithm versus the true classication represented by
-  a manual classification by a specialist... but one can also compare two
-  automatic or two manual classifications against each other).
+  using a machine learning algorithm versus the true classification done by a
+  specialist... but one can also compare two automatic or two manual
+  classifications against each other).
 }
 
 \usage{
@@ -76,13 +76,13 @@ prior(object, \dots) <- value
     under, the \code{value} argument. }
   \item{sums}{ is the confusion matrix printed with rows and columns sums? }
   \item{error.col}{ is a column with class error for first classifier added
-    (equivalent to flase negative rate of FNR)? }
+    (equivalent to false negative rate of FNR)? }
   \item{digits}{ the number of digits after the decimal point to print in the
     confusion matrix. The default or zero leads to most compact presentation
     and is suitable for frequencies, but not for relative frequencies. }
   \item{sort}{ are rows and columns of the confusion matrix sorted so that
     classes with larger confusion are closer together? Sorting is done
-    using a hierachical clustering with \code{hclust()}. The clustering method
+    using a hierarchical clustering with \code{hclust()}. The clustering method
     is provided is the one provides (\code{"ward.D2"}, by default, but see the
     \code{hclust()} help for other options). If \code{FALSE} or \code{NULL}, no
     sorting is done. }
@@ -101,13 +101,13 @@ prior(object, \dots) <- value
   \item{cex}{ text magnification factor. }
   \item{cex.axis}{ idem for axes. If \code{NULL}, the axis is not drawn. }
   \item{cex.legend}{ idem for legend text. If \code{NULL}, no legend is added. }
-  \item{asp}{ graph aspect ration. There is little reasons to cvhange the
+  \item{asp}{ graph aspect ration. There is little reasons to change the
     default value of 1. }
   \item{col}{ color(s) to use fir the graph. }
   \item{colfun}{ a function that calculates a series of colors, like e.g.,
     \code{cm.colors()} and that accepts one argument being the number of colors
     to be generated. }
-  \item{ncols}{ the number of colors to generate. It should preferrably be
+  \item{ncols}{ the number of colors to generate. It should preferably be
     2 * number of levels + 1, where levels is the number of frequencies you
     want to evidence in the plot. Default to 41. }
   \item{col0}{ should null values be colored or not (no, by default)? }

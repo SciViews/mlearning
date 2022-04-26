@@ -6,7 +6,7 @@
 
 <!-- badges: end -->
 
-A unified interface is provided to various machine learning algorithms like LDA, QDA, k-nearest neighbour, LVQ, random forest, SVM, ... It allows to train, test, and apply cross-validation using similar functions and function arguments with a minimalist and clean, formula-based interface. Missing data are threated the same way as base and stats R functions for all algorithms, both in training and testing. Confusion matrices are also provided with a rich set of metrics calculated and a few specific plots.
+A unified interface is provided to various machine learning algorithms like linear or quadratic discriminant analysis, k-nearest neighbor, learning vector quantization, random forest, support vector machine, ... It allows to train, test, and apply cross-validation using similar functions and function arguments with a minimalist and clean, formula-based interface. Missing data are processed the same way as base and stats R functions for all algorithms, both in training and testing. Confusion matrices are also provided with a rich set of metrics calculated and a few specific plots.
 
 ## Installation
 
