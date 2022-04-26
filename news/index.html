@@ -73,7 +73,7 @@
 </ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="1.1.0" id="mlearning-110">mlearning 1.1.0<a class="anchor" aria-label="anchor" href="#mlearning-110"></a></h2>
-<ul><li><p>mlKnn() is implemented for K-nearest neigbours.</p></li>
+<ul><li><p>mlKnn() is implemented for K-nearest neighbors.</p></li>
 <li><p>Several adjustments were required for compatibility with R 4.2.0 (it is not allowed any more to use vectors &gt; 1 with || and &amp;&amp;).</p></li>
 </ul></div>
     <div class="section level2">
@@ -87,14 +87,14 @@
 <ul><li>In <code><a href="../reference/mlearning.html">mlLvq()</a></code> providing <code>size =</code> or <code>prior =</code> led to an <code>lvq</code> object not found message. Corrected.</li></ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="1.0.4" id="mlearning-104">mlearning 1.0.4<a class="anchor" aria-label="anchor" href="#mlearning-104"></a></h2>
-<ul><li><p>Sometines, data was not found (e.g., when called inside a learnr).</p></li>
+<ul><li><p>Sometimes, data was not found (e.g., when called inside a {learnr} tutorial).</p></li>
 <li><p>In mlearning(), data is forced with <code><a href="https://rdrr.io/r/base/as.data.frame.html" class="external-link">as.data.frame()</a></code> (tibbles are not supported internally).</p></li>
 <li><p>In the <code>mlXXX()</code> function, it was not possible to indicate something like <code>mlLda(data = iris, Species ~ .)</code>. Solved by adding <code>train =</code> argument in <code>mlXXX()</code>.</p></li>
 <li><p>In <code><a href="../reference/confusion.html">summary.confusion()</a></code> produced an error if more than one <code>type =</code> was provided.</p></li>
 </ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="1.0.3" id="mlearning-103">mlearning 1.0.3<a class="anchor" aria-label="anchor" href="#mlearning-103"></a></h2>
-<ul><li>NEWS.md file added. Repository moved to Github.</li></ul></div>
+<ul><li>NEWS.md file added. Repository moved to GitHub.</li></ul></div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
