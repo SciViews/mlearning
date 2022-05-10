@@ -23,18 +23,16 @@ jobs:
         with:
           use-public-rspm: true
 
-      - name: Query dependencies
-        run: |
-          install.packages('remotes')
-          remotes::install_github("SciViews/svPkgdown")
-          saveRDS(remotes::dev_package_deps(dependencies = TRUE), ".github/depends.Rds", version = 2)
-          writeLines(sprintf("R-%i.%i", getRversion()$major, getRversion()$minor), ".github/R-version")
-        shell: Rscript {0}
-
       - uses: r-lib/actions/setup-r-dependencies@v1
         with:
           extra-packages: pkgdown
           needs: website
+
+      - name: Install svPkgdown
+        run: |
+          install.packages('remotes')
+          remotes::install_github("SciViews/svPkgdown")
+        shell: Rscript {0}
 
       - name: Deploy package
         run: |

@@ -1,18 +1,8 @@
 Package: mlearning
 Type: Package
-Title: Machine Learning Algorithms with Unified Interface and Confusion Matrices
 Version: 1.1.1
 Date: 2022-04-26
-Author: Philippe Grosjean [aut, cre],
-  Kevin Denis [aut]
-Authors@R: c(person("Philippe", "Grosjean", role = c("aut", "cre"),
-  email = "phgrosjean@sciviews.org"),
-  person("Kevin", "Denis", role = "aut",
-  email = "kevin.denis@umons.ac.be"))
-Maintainer: Philippe Grosjean <phgrosjean@sciviews.org>
-Depends: R (>= 3.0.4)
-Imports: stats, grDevices, class, nnet, MASS, e1071, randomForest, ipred
-Suggests: mlbench, datasets, RColorBrewer, spelling
+Title: Machine Learning Algorithms with Unified Interface and Confusion Matrices
 Description: A unified interface is provided to various machine learning
   algorithms like like linear or quadratic discriminant analysis, k-nearest
   neighbors, learning vector quantization, random forest, support vector
@@ -22,6 +12,21 @@ Description: A unified interface is provided to various machine learning
   stats R functions for all algorithms, both in training and testing. Confusion
   matrices are also provided with a rich set of metrics calculated and a few
   specific plots.
+Authors@R: c(
+  person("Philippe", "Grosjean", role = c("aut", "cre"),
+    email = "phgrosjean@sciviews.org",
+    comment = c(ORCID = "0000-0002-2694-9471")),
+  person("Kevin", "Denis", role = "aut",
+    email = "kevin.denis@umons.ac.be"))
+Maintainer: Philippe Grosjean <phgrosjean@sciviews.org>
+Depends: R (>= 3.0.4)
+Imports: stats, grDevices, class, nnet, MASS, e1071, randomForest, ipred
+Suggests: mlbench, datasets, RColorBrewer, spelling, knitr, rmarkdown, covr
+URL: https://www.sciviews.org/mlearning/, https://www.sciviews.org/mlearning/
+BugReports: https://github.com/SciViews/mlearning/issues
 License: GPL (>= 2)
-URL: https://www.sciviews.org/mlearning/
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+VignetteBuilder: knitr
+Encoding: UTF-8
 Language: en-US

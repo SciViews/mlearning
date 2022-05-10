@@ -45,7 +45,6 @@ Get help about this package:
 ``` r
 library(help = "mlearning")
 help("mlearning-package")
-vignette("mlearning") # None is installed with install_github()
 ```
 
 For further instructions, please, refer to the help pages at <https://www.sciviews.org/mlearning/>.

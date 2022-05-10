@@ -6,7 +6,7 @@
 
 # mlearning 1.1.0
 
--   mlKnn() is implemented for K-nearest neighbors.
+-   `mlKnn()` is implemented for K-nearest neighbors.
 
 -   Several adjustments were required for compatibility with R 4.2.0 (it is not allowed any more to use vectors \> 1 with \|\| and &&).
 
@@ -26,7 +26,7 @@
 
 -   Sometimes, data was not found (e.g., when called inside a {learnr} tutorial).
 
--   In mlearning(), data is forced with `as.data.frame()` (tibbles are not supported internally).
+-   In `mlearning()`, data is forced with `as.data.frame()` (tibbles are not supported internally).
 
 -   In the `mlXXX()` function, it was not possible to indicate something like `mlLda(data = iris, Species ~ .)`. Solved by adding `train =` argument in `mlXXX()`.
 
