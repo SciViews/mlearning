@@ -47,7 +47,12 @@
 <li>
   <a href="../news/index.html">Changelog</a>
 </li>
-        
+        <li>
+  <a href="https://github.com/SciViews/mlearning/" class="external-link">
+    <span class="fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
       </ul><div class="navbar-title">
         <a class="navbar-brand" href="../index.html"><p class="h2">mlearning <small>v1.1.1</small></p></a>
       </div>
@@ -63,17 +68,17 @@
   <div class="col-md-9 contents">
     <div class="page-header">
       <h1 data-toc-skip>Changelog <small></small></h1>
-      
+      <small>Source: <a href="https://github.com/SciViews/mlearning/blob/HEAD/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
     <div class="section level2">
-<h2 class="page-header" data-toc-text="1.1.1" id="mlearning-111">mlearning 1.1.1<a class="anchor" aria-label="anchor" href="#mlearning-111"></a></h2>
+<h2 class="page-header" data-toc-text="1.1.1" id="mlearning-111">mlearning 1.1.1<small>2022-04-26</small><a class="anchor" aria-label="anchor" href="#mlearning-111"></a></h2>
 <ul><li><p>The description is extended.</p></li>
 <li><p>A {pkgdown} site is added.</p></li>
 </ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="1.1.0" id="mlearning-110">mlearning 1.1.0<a class="anchor" aria-label="anchor" href="#mlearning-110"></a></h2>
-<ul><li><p>mlKnn() is implemented for K-nearest neighbors.</p></li>
+<ul><li><p><code><a href="../reference/mlearning.html">mlKnn()</a></code> is implemented for K-nearest neighbors.</p></li>
 <li><p>Several adjustments were required for compatibility with R 4.2.0 (it is not allowed any more to use vectors &gt; 1 with || and &amp;&amp;).</p></li>
 </ul></div>
     <div class="section level2">
@@ -88,7 +93,7 @@
     <div class="section level2">
 <h2 class="page-header" data-toc-text="1.0.4" id="mlearning-104">mlearning 1.0.4<a class="anchor" aria-label="anchor" href="#mlearning-104"></a></h2>
 <ul><li><p>Sometimes, data was not found (e.g., when called inside a {learnr} tutorial).</p></li>
-<li><p>In mlearning(), data is forced with <code><a href="https://rdrr.io/r/base/as.data.frame.html" class="external-link">as.data.frame()</a></code> (tibbles are not supported internally).</p></li>
+<li><p>In <code><a href="../reference/mlearning.html">mlearning()</a></code>, data is forced with <code><a href="https://rdrr.io/r/base/as.data.frame.html" class="external-link">as.data.frame()</a></code> (tibbles are not supported internally).</p></li>
 <li><p>In the <code>mlXXX()</code> function, it was not possible to indicate something like <code>mlLda(data = iris, Species ~ .)</code>. Solved by adding <code>train =</code> argument in <code>mlXXX()</code>.</p></li>
 <li><p>In <code><a href="../reference/confusion.html">summary.confusion()</a></code> produced an error if more than one <code>type =</code> was provided.</p></li>
 </ul></div>
