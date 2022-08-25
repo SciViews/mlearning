@@ -83,150 +83,185 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">confusion</span><span class="op">(</span><span class="va">x</span>, <span class="va">...</span><span class="op">)</span>
-<span class="co"># S3 method for default</span>
-<span class="fu">confusion</span><span class="op">(</span><span class="va">x</span>, y <span class="op">=</span> <span class="cn">NULL</span>, vars <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Actual"</span>, <span class="st">"Predicted"</span><span class="op">)</span>,
-    labels <span class="op">=</span> <span class="va">vars</span>, merge.by <span class="op">=</span> <span class="st">"Id"</span>, useNA <span class="op">=</span> <span class="st">"ifany"</span>, <span class="va">prior</span>, <span class="va">...</span><span class="op">)</span>
-<span class="co"># S3 method for mlearning</span>
-<span class="fu">confusion</span><span class="op">(</span><span class="va">x</span>, y <span class="op">=</span> <span class="fu"><a href="mlearning.html">response</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>,
-    labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Actual"</span>, <span class="st">"Predicted"</span><span class="op">)</span>, useNA <span class="op">=</span> <span class="st">"ifany"</span>, <span class="va">prior</span>, <span class="va">...</span><span class="op">)</span>
-
-<span class="co"># S3 method for confusion</span>
-<span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">x</span>, sums <span class="op">=</span> <span class="cn">TRUE</span>, error.col <span class="op">=</span> <span class="va">sums</span>, digits <span class="op">=</span> <span class="fl">0</span>,
-    sort <span class="op">=</span> <span class="st">"ward.D2"</span>, <span class="va">...</span><span class="op">)</span>
-<span class="co"># S3 method for confusion</span>
-<span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">object</span>, type <span class="op">=</span> <span class="st">"all"</span>, sort.by <span class="op">=</span> <span class="st">"Fscore"</span>,
-    decreasing <span class="op">=</span> <span class="cn">TRUE</span>, <span class="va">...</span><span class="op">)</span>
-<span class="co"># S3 method for summary.confusion</span>
-<span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">...</span><span class="op">)</span>
-<span class="co"># S3 method for confusion</span>
-<span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">x</span>, y <span class="op">=</span> <span class="cn">NULL</span>, type <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"image"</span>, <span class="st">"barplot"</span>, <span class="st">"stars"</span>,
-    <span class="st">"dendrogram"</span><span class="op">)</span>, stat1 <span class="op">=</span> <span class="st">"Recall"</span>, stat2 <span class="op">=</span> <span class="st">"Precision"</span>, <span class="va">names</span>, <span class="va">...</span><span class="op">)</span>
-
-<span class="fu">confusionImage</span><span class="op">(</span><span class="va">x</span>, y <span class="op">=</span> <span class="cn">NULL</span>, labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/dimnames.html" class="external-link">dimnames</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span>, sort <span class="op">=</span> <span class="st">"ward.D2"</span>,
-    numbers <span class="op">=</span> <span class="cn">TRUE</span>, digits <span class="op">=</span> <span class="fl">0</span>, mar <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">3.1</span>, <span class="fl">10.1</span>, <span class="fl">3.1</span>, <span class="fl">3.1</span><span class="op">)</span>, cex <span class="op">=</span> <span class="fl">1</span>, asp <span class="op">=</span> <span class="fl">1</span>,
-    <span class="va">colfun</span>, ncols <span class="op">=</span> <span class="fl">41</span>, col0 <span class="op">=</span> <span class="cn">FALSE</span>, grid.col <span class="op">=</span> <span class="st">"gray"</span>, <span class="va">...</span><span class="op">)</span>
-<span class="fu">confusionBarplot</span><span class="op">(</span><span class="va">x</span>, y <span class="op">=</span> <span class="cn">NULL</span>, col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"PeachPuff2"</span>, <span class="st">"green3"</span>, <span class="st">"lemonChiffon2"</span><span class="op">)</span>,
-    mar <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1.1</span>, <span class="fl">8.1</span>, <span class="fl">4.1</span>, <span class="fl">2.1</span><span class="op">)</span>, cex <span class="op">=</span> <span class="fl">1</span>, cex.axis <span class="op">=</span> <span class="va">cex</span>, cex.legend <span class="op">=</span> <span class="va">cex</span>,
-    main <span class="op">=</span> <span class="st">"F-score (precision versus recall)"</span>, numbers <span class="op">=</span> <span class="cn">TRUE</span>, min.width <span class="op">=</span> <span class="fl">17</span>,
-    <span class="va">...</span><span class="op">)</span>
-<span class="fu">confusionStars</span><span class="op">(</span><span class="va">x</span>, y <span class="op">=</span> <span class="cn">NULL</span>, stat1 <span class="op">=</span> <span class="st">"Recall"</span>, stat2 <span class="op">=</span> <span class="st">"Precision"</span>, <span class="va">names</span>, <span class="va">main</span>,
-    col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"green2"</span>, <span class="st">"blue2"</span>, <span class="st">"green4"</span>, <span class="st">"blue4"</span><span class="op">)</span>, <span class="va">...</span><span class="op">)</span>
-<span class="fu">confusionDendrogram</span><span class="op">(</span><span class="va">x</span>, y <span class="op">=</span> <span class="cn">NULL</span>, labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">rownames</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>, sort <span class="op">=</span> <span class="st">"ward.D2"</span>,
-    main <span class="op">=</span> <span class="st">"Groups clustering"</span>, <span class="va">...</span><span class="op">)</span>
-
-<span class="fu">prior</span><span class="op">(</span><span class="va">object</span>, <span class="va">...</span><span class="op">)</span>
-<span class="co"># S3 method for confusion</span>
-<span class="fu">prior</span><span class="op">(</span><span class="va">object</span>, <span class="va">...</span><span class="op">)</span>
-<span class="fu">prior</span><span class="op">(</span><span class="va">object</span>, <span class="va">...</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="va">value</span>
-<span class="co"># S3 method for confusion</span>
-<span class="fu">prior</span><span class="op">(</span><span class="va">object</span>, <span class="va">...</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="va">value</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">confusion</span><span class="op">(</span><span class="va">x</span>, <span class="va">...</span><span class="op">)</span></span>
+<span><span class="co"># S3 method for default</span></span>
+<span><span class="fu">confusion</span><span class="op">(</span><span class="va">x</span>, y <span class="op">=</span> <span class="cn">NULL</span>, vars <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Actual"</span>, <span class="st">"Predicted"</span><span class="op">)</span>,</span>
+<span>    labels <span class="op">=</span> <span class="va">vars</span>, merge.by <span class="op">=</span> <span class="st">"Id"</span>, useNA <span class="op">=</span> <span class="st">"ifany"</span>, <span class="va">prior</span>, <span class="va">...</span><span class="op">)</span></span>
+<span><span class="co"># S3 method for mlearning</span></span>
+<span><span class="fu">confusion</span><span class="op">(</span><span class="va">x</span>, y <span class="op">=</span> <span class="fu"><a href="mlearning.html">response</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>,</span>
+<span>    labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Actual"</span>, <span class="st">"Predicted"</span><span class="op">)</span>, useNA <span class="op">=</span> <span class="st">"ifany"</span>, <span class="va">prior</span>, <span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># S3 method for confusion</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">x</span>, sums <span class="op">=</span> <span class="cn">TRUE</span>, error.col <span class="op">=</span> <span class="va">sums</span>, digits <span class="op">=</span> <span class="fl">0</span>,</span>
+<span>    sort <span class="op">=</span> <span class="st">"ward.D2"</span>, <span class="va">...</span><span class="op">)</span></span>
+<span><span class="co"># S3 method for confusion</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">object</span>, type <span class="op">=</span> <span class="st">"all"</span>, sort.by <span class="op">=</span> <span class="st">"Fscore"</span>,</span>
+<span>    decreasing <span class="op">=</span> <span class="cn">TRUE</span>, <span class="va">...</span><span class="op">)</span></span>
+<span><span class="co"># S3 method for summary.confusion</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">...</span><span class="op">)</span></span>
+<span><span class="co"># S3 method for confusion</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">x</span>, y <span class="op">=</span> <span class="cn">NULL</span>, type <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"image"</span>, <span class="st">"barplot"</span>, <span class="st">"stars"</span>,</span>
+<span>    <span class="st">"dendrogram"</span><span class="op">)</span>, stat1 <span class="op">=</span> <span class="st">"Recall"</span>, stat2 <span class="op">=</span> <span class="st">"Precision"</span>, <span class="va">names</span>, <span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">confusionImage</span><span class="op">(</span><span class="va">x</span>, y <span class="op">=</span> <span class="cn">NULL</span>, labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/dimnames.html" class="external-link">dimnames</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span>, sort <span class="op">=</span> <span class="st">"ward.D2"</span>,</span>
+<span>    numbers <span class="op">=</span> <span class="cn">TRUE</span>, digits <span class="op">=</span> <span class="fl">0</span>, mar <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">3.1</span>, <span class="fl">10.1</span>, <span class="fl">3.1</span>, <span class="fl">3.1</span><span class="op">)</span>, cex <span class="op">=</span> <span class="fl">1</span>, asp <span class="op">=</span> <span class="fl">1</span>,</span>
+<span>    <span class="va">colfun</span>, ncols <span class="op">=</span> <span class="fl">41</span>, col0 <span class="op">=</span> <span class="cn">FALSE</span>, grid.col <span class="op">=</span> <span class="st">"gray"</span>, <span class="va">...</span><span class="op">)</span></span>
+<span><span class="fu">confusionBarplot</span><span class="op">(</span><span class="va">x</span>, y <span class="op">=</span> <span class="cn">NULL</span>, col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"PeachPuff2"</span>, <span class="st">"green3"</span>, <span class="st">"lemonChiffon2"</span><span class="op">)</span>,</span>
+<span>    mar <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1.1</span>, <span class="fl">8.1</span>, <span class="fl">4.1</span>, <span class="fl">2.1</span><span class="op">)</span>, cex <span class="op">=</span> <span class="fl">1</span>, cex.axis <span class="op">=</span> <span class="va">cex</span>, cex.legend <span class="op">=</span> <span class="va">cex</span>,</span>
+<span>    main <span class="op">=</span> <span class="st">"F-score (precision versus recall)"</span>, numbers <span class="op">=</span> <span class="cn">TRUE</span>, min.width <span class="op">=</span> <span class="fl">17</span>,</span>
+<span>    <span class="va">...</span><span class="op">)</span></span>
+<span><span class="fu">confusionStars</span><span class="op">(</span><span class="va">x</span>, y <span class="op">=</span> <span class="cn">NULL</span>, stat1 <span class="op">=</span> <span class="st">"Recall"</span>, stat2 <span class="op">=</span> <span class="st">"Precision"</span>, <span class="va">names</span>, <span class="va">main</span>,</span>
+<span>    col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"green2"</span>, <span class="st">"blue2"</span>, <span class="st">"green4"</span>, <span class="st">"blue4"</span><span class="op">)</span>, <span class="va">...</span><span class="op">)</span></span>
+<span><span class="fu">confusionDendrogram</span><span class="op">(</span><span class="va">x</span>, y <span class="op">=</span> <span class="cn">NULL</span>, labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">rownames</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>, sort <span class="op">=</span> <span class="st">"ward.D2"</span>,</span>
+<span>    main <span class="op">=</span> <span class="st">"Groups clustering"</span>, <span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">prior</span><span class="op">(</span><span class="va">object</span>, <span class="va">...</span><span class="op">)</span></span>
+<span><span class="co"># S3 method for confusion</span></span>
+<span><span class="fu">prior</span><span class="op">(</span><span class="va">object</span>, <span class="va">...</span><span class="op">)</span></span>
+<span><span class="fu">prior</span><span class="op">(</span><span class="va">object</span>, <span class="va">...</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="va">value</span></span>
+<span><span class="co"># S3 method for confusion</span></span>
+<span><span class="fu">prior</span><span class="op">(</span><span class="va">object</span>, <span class="va">...</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="va">value</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>x</dt>
 <dd><p>an object.</p></dd>
-<dt>y</dt>
+
+  <dt>y</dt>
 <dd><p>another object, from which to extract the second classification, or
     <code>NULL</code> if not used.</p></dd>
-<dt>vars</dt>
+
+  <dt>vars</dt>
 <dd><p>the variables of interest in the first and second classification
     in the case the objects are lists or data frames. Otherwise, this argument
     is ignored and <code>x</code> and <code>y</code> must be factors with same length and
     same levels.</p></dd>
-<dt>labels</dt>
+
+  <dt>labels</dt>
 <dd><p>labels to use for the two classifications. By default, it is
     the same as <code>vars</code> or the one in the confusion matrix.</p></dd>
-<dt>merge.by</dt>
+
+  <dt>merge.by</dt>
 <dd><p>a character string with the name of variables to use to merge
     the two data frames, or <code>NULL</code>.</p></dd>
-<dt>useNA</dt>
+
+  <dt>useNA</dt>
 <dd><p>do we keep NAs as a separate category? The default <code>"ifany"</code>
     creates this category only if there are missing values. Other possibilities
     are <code>"no"</code>, or <code>"always"</code>.</p></dd>
-<dt>prior</dt>
+
+  <dt>prior</dt>
 <dd><p>class frequencies to use for first classifier that
     is tabulated in the rows of the confusion matrix. For its value, see here
     under, the <code>value</code> argument.</p></dd>
-<dt>sums</dt>
+
+  <dt>sums</dt>
 <dd><p>is the confusion matrix printed with rows and columns sums?</p></dd>
-<dt>error.col</dt>
+
+  <dt>error.col</dt>
 <dd><p>is a column with class error for first classifier added
     (equivalent to false negative rate of FNR)?</p></dd>
-<dt>digits</dt>
+
+  <dt>digits</dt>
 <dd><p>the number of digits after the decimal point to print in the
     confusion matrix. The default or zero leads to most compact presentation
     and is suitable for frequencies, but not for relative frequencies.</p></dd>
-<dt>sort</dt>
+
+  <dt>sort</dt>
 <dd><p>are rows and columns of the confusion matrix sorted so that
     classes with larger confusion are closer together? Sorting is done
     using a hierarchical clustering with <code><a href="https://rdrr.io/r/stats/hclust.html" class="external-link">hclust()</a></code>. The clustering method
     is provided is the one provides (<code>"ward.D2"</code>, by default, but see the
     <code><a href="https://rdrr.io/r/stats/hclust.html" class="external-link">hclust()</a></code> help for other options). If <code>FALSE</code> or <code>NULL</code>, no
     sorting is done.</p></dd>
-<dt>object</dt>
+
+  <dt>object</dt>
 <dd><p>a 'confusion' object.</p></dd>
-<dt>sort.by</dt>
+
+  <dt>sort.by</dt>
 <dd><p>the statistics to use to sort the table (by default, Fmeasure,
     the F1 score for each class = 2 * recall * precision / (recall + precision)).</p></dd>
-<dt>decreasing</dt>
+
+  <dt>decreasing</dt>
 <dd><p>do we sort in increasing or decreasing order?</p></dd>
-<dt>type</dt>
+
+  <dt>type</dt>
 <dd><p>the type of graph to plot (only <code>"stars"</code> if two confusion
     matrices are to be compared).</p></dd>
-<dt>stat1</dt>
+
+  <dt>stat1</dt>
 <dd><p>first statistic to compare in the stars plot.</p></dd>
-<dt>stat2</dt>
+
+  <dt>stat2</dt>
 <dd><p>second statistic to compare in the stars plot.</p></dd>
-<dt>...</dt>
+
+  <dt>...</dt>
 <dd><p>further arguments passed to the function. In particular for
     <code><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot()</a></code>, it can be all arguments for the corresponding plot.</p></dd>
-<dt>numbers</dt>
+
+  <dt>numbers</dt>
 <dd><p>are actual numbers indicated in the confusion matrix image?</p></dd>
-<dt>mar</dt>
+
+  <dt>mar</dt>
 <dd><p>graph margins.</p></dd>
-<dt>cex</dt>
+
+  <dt>cex</dt>
 <dd><p>text magnification factor.</p></dd>
-<dt>cex.axis</dt>
+
+  <dt>cex.axis</dt>
 <dd><p>idem for axes. If <code>NULL</code>, the axis is not drawn.</p></dd>
-<dt>cex.legend</dt>
+
+  <dt>cex.legend</dt>
 <dd><p>idem for legend text. If <code>NULL</code>, no legend is added.</p></dd>
-<dt>asp</dt>
+
+  <dt>asp</dt>
 <dd><p>graph aspect ration. There is little reasons to change the
     default value of 1.</p></dd>
-<dt>col</dt>
+
+  <dt>col</dt>
 <dd><p>color(s) to use fir the graph.</p></dd>
-<dt>colfun</dt>
+
+  <dt>colfun</dt>
 <dd><p>a function that calculates a series of colors, like e.g.,
     <code><a href="https://rdrr.io/r/grDevices/palettes.html" class="external-link">cm.colors()</a></code> and that accepts one argument being the number of colors
     to be generated.</p></dd>
-<dt>ncols</dt>
+
+  <dt>ncols</dt>
 <dd><p>the number of colors to generate. It should preferably be
     2 * number of levels + 1, where levels is the number of frequencies you
     want to evidence in the plot. Default to 41.</p></dd>
-<dt>col0</dt>
+
+  <dt>col0</dt>
 <dd><p>should null values be colored or not (no, by default)?</p></dd>
-<dt>grid.col</dt>
+
+  <dt>grid.col</dt>
 <dd><p>color to use for grid lines, or <code>NULL</code> for not drawing
     grid lines.</p></dd>
-<dt>names</dt>
+
+  <dt>names</dt>
 <dd><p>names of the two classifiers to compare.</p></dd>
-<dt>main</dt>
+
+  <dt>main</dt>
 <dd><p>main title of the graph.</p></dd>
-<dt>min.width</dt>
+
+  <dt>min.width</dt>
 <dd><p>minimum bar width required to add numbers.</p></dd>
-<dt>value</dt>
+
+  <dt>value</dt>
 <dd><p>a single positive numeric to set all class frequencies to this
     value (use 1 for relative frequencies and 100 for relative freqs in percent),
     or a vector of positive numbers of the same length as the levels in the
     object. If the vector is named, names must match levels. Alternatively,
     providing <code>NULL</code> or an object of null length resets row class
     frequencies into their initial values.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>A confusion matrix in a 'confusion' object. <code>prior()</code> returns the
+    
+
+<p>A confusion matrix in a 'confusion' object. <code>prior()</code> returns the
   current class frequencies associated with first classification tabulated, i.e.,
   for rows in the confusion matrix.</p>
     </div>
@@ -243,136 +278,143 @@
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"Glass"</span>, package <span class="op">=</span> <span class="st">"mlbench"</span><span class="op">)</span></span>
-<span class="r-in"><span class="co">## Use a little bit more informative labels for Type</span></span>
-<span class="r-in"><span class="va">Glass</span><span class="op">$</span><span class="va">Type</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">as.factor</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="st">"Glass"</span>, <span class="va">Glass</span><span class="op">$</span><span class="va">Type</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## Use learning vector quantization to classify the glass types</span></span>
-<span class="r-in"><span class="co">## (using default parameters)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">glassLvq</span> <span class="op">&lt;-</span> <span class="fu"><a href="mlearning.html">mlLvq</a></span><span class="op">(</span><span class="va">Type</span> <span class="op">~</span> <span class="va">.</span>, data <span class="op">=</span> <span class="va">Glass</span><span class="op">)</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"Glass"</span>, package <span class="op">=</span> <span class="st">"mlbench"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="co">## Use a little bit more informative labels for Type</span></span></span>
+<span class="r-in"><span><span class="va">Glass</span><span class="op">$</span><span class="va">Type</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">as.factor</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="st">"Glass"</span>, <span class="va">Glass</span><span class="op">$</span><span class="va">Type</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## Use learning vector quantization to classify the glass types</span></span></span>
+<span class="r-in"><span><span class="co">## (using default parameters)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">glassLvq</span> <span class="op">&lt;-</span> <span class="fu"><a href="mlearning.html">mlLvq</a></span><span class="op">(</span><span class="va">Type</span> <span class="op">~</span> <span class="va">.</span>, data <span class="op">=</span> <span class="va">Glass</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> A mlearning object of class mlLvq (learning vector quantization):</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Initial call: mlLvq.formula(formula = Type ~ ., data = Glass)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Codebook:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       Class       RI       Na          Mg         Al       Si           K</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 49  Glass 1 1.522153 13.08971  4.31065996  0.5685065 72.18673  0.08445309</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8   Glass 1 1.517409 13.39563  3.76241477  1.0500058 73.21023  0.56087537</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19  Glass 1 1.519849 13.61383  4.51675203  0.8277615 72.05695  0.11565411</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 40  Glass 1 1.523863 14.14131  4.65305752 -0.2445196 72.07291 -0.16035893</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 62  Glass 1 1.520913 13.47436  4.57636000  0.1857360 72.66754 -0.55648800</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 33  Glass 1 1.517794 12.80982  3.62597943  1.2605162 73.10173  0.60484301</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 52  Glass 1 1.519766 13.62967  4.45002660  0.6093953 72.68317  0.44139120</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21  Glass 1 1.516310 12.59699  3.48832176  1.3533489 73.33101  0.47693981</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 144 Glass 2 1.517546 12.93354  4.28923077  1.5467692 73.23785 -0.60969231</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 78  Glass 2 1.516528 12.97542  3.70941860  1.5585488 73.01446  0.42928395</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 113 Glass 2 1.528915 12.05642  0.00000000  1.0448613 71.61690  0.18130980</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 114 Glass 2 1.517077 13.04167  4.25626865  1.2382441 73.11767  0.44163013</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 123 Glass 2 1.515108 13.13886  3.64049205  1.4403553 73.34168  0.30278908</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 121 Glass 2 1.516949 13.27763  4.22680695  1.1715255 72.55561  0.41745989</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 91  Glass 2 1.520456 12.75790  4.39245018  0.8750984 72.39392 -0.38140981</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 141 Glass 2 1.516214 13.57360  4.47000000  1.2296000 73.35420 -1.01140000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 148 Glass 3 1.508883 13.61997  4.79487837  0.9926200 72.74490 -1.03288262</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 147 Glass 3 1.517519 13.47414  4.17220720  0.5464890 73.01278  0.08067287</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 168 Glass 5 1.520908 11.41950  1.18167772  2.0052901 73.22468  0.43811937</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 182 Glass 6 1.512725 16.24925  0.73259914  0.8951937 74.73445 -0.07978810</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 207 Glass 7 1.517920 14.78440  0.22459519  1.8734887 73.10390 -0.30101853</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 209 Glass 7 1.514421 14.32777 -0.40403120  3.1404915 73.69010 -0.99430995</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 203 Glass 7 1.515714 14.70281 -0.07102805  2.5851968 73.40303 -0.23251743</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>            Ca          Ba           Fe</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 49   9.627877  0.00000000  0.104509750</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8    8.083851 -0.07783964 -0.056906402</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19   8.560403  0.16245995 -0.065809672</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 40   9.363644  0.00000000 -0.058066287</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 62   9.309840  0.34507200 -0.034200000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 33   8.501298 -0.01038846  0.045409661</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 52   8.771010 -0.20563920 -0.208111000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21   8.567823 -0.15266447  0.322336132</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 144  8.390923  0.00000000  0.000000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 78   8.147345 -0.08543639 -0.001587833</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 113 14.755485  0.13500000  0.132933849</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 114  8.304349 -0.59905898  0.114623573</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 123  8.008941 -0.07829311  0.096664835</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 121  8.229515 -0.25174098  0.172684417</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 91   9.440496  0.16627341  0.411237902</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 141  8.665600 -0.48900000  0.000000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 148  8.446920  0.00000000 -0.065910000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 147  8.570252  0.03077995  0.049247918</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 168 11.601178  0.02308294  0.002433555</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 182  7.321783  0.00000000 -0.011246621</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 207  8.605755  1.65292782  0.015150823</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 209  9.209624  1.15453205 -0.072929549</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 203  8.799119  0.75030043  0.018803395</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## Calculate cross-validated confusion matrix and plot it in different ways</span></span>
-<span class="r-in"><span class="op">(</span><span class="va">glassConf</span> <span class="op">&lt;-</span> <span class="fu">confusion</span><span class="op">(</span><span class="fu"><a href="mlearning.html">cvpredict</a></span><span class="op">(</span><span class="va">glassLvq</span><span class="op">)</span>, <span class="va">Glass</span><span class="op">$</span><span class="va">Type</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 214 items classified with 140 true positives (error rate = 34.6%)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       Class       RI       Na          Mg        Al       Si           K</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14  Glass 1 1.516212 12.82279  4.13421915 0.9630913 73.72783 -0.43219960</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12  Glass 1 1.517792 12.69909  3.63044585 1.3286747 73.17948  0.59061701</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 44  Glass 1 1.521719 13.44335  3.70667314 0.9079679 72.01584  0.16347623</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 48  Glass 1 1.523744 13.94663  3.85712674 0.4588409 71.76857  0.01767525</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26  Glass 1 1.517427 12.83764  3.54197366 1.2523051 73.12679  0.59824132</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 52  Glass 1 1.517744 13.28212  3.32846240 1.0667280 72.88848  0.53576496</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 59  Glass 1 1.520335 13.57389  3.99716480 0.8905632 73.35763  0.17369120</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 43  Glass 1 1.519201 13.29353  3.69309973 0.8802334 73.18216 -0.18674353</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 138 Glass 2 1.517245 12.85941  3.74898026 1.2996053 73.36964  0.44154605</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 82  Glass 2 1.517344 13.20896  3.82958805 1.4255249 72.77198  0.39462760</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 111 Glass 2 1.527227 11.97760  0.00000000 1.0448000 72.22600  0.17550000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 102 Glass 2 1.517251 12.42547  3.33134408 1.2446528 72.92828  0.48541562</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 130 Glass 2 1.522832 13.75252  2.37751690 1.1659701 71.42306  0.15318681</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 73  Glass 2 1.516562 13.33009  4.30009826 1.5229844 73.11913 -0.53150517</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 94  Glass 2 1.516546 12.87749  3.57340156 1.5703701 73.14183  0.51571478</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 107 Glass 2 1.531250 10.73000  0.00000000 2.1000000 69.81000  0.58000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 147 Glass 3 1.514779 13.52187  3.76475655 0.9725332 73.33781 -0.17476762</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 153 Glass 3 1.517868 13.52770  3.60480752 0.6144010 73.06110  0.08161789</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 167 Glass 5 1.520484 12.16962  0.90230401 1.9304453 72.96194  0.41333317</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 178 Glass 6 1.517815 14.38655  1.80750308 1.2196699 73.17177 -0.19346423</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 199 Glass 7 1.516117 14.57732 -0.02378703 2.5993148 73.37945 -0.35184870</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 200 Glass 7 1.518242 14.78527  0.00000000 2.6772189 73.11515 -1.39372781</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 203 Glass 7 1.517811 14.79321  0.10277163 1.9683000 73.14813 -0.17686977</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>            Ca           Ba           Fe</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14   8.570032 -0.015414663  0.263658051</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12   8.560143 -0.005379310 -0.002305966</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 44   9.616259  0.047654095  0.040442667</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 48   9.849816  0.000000000  0.001021592</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26   8.495574  0.002076466  0.041923836</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 52   8.787544 -0.032951826  0.056396127</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 59   8.636744 -0.357000000 -0.089040000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 43   9.109479 -0.036565470 -0.033943856</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 138  8.438618 -0.412500000 -0.061875000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 82   8.255654 -0.183186048  0.115131057</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 111 14.385100  0.000000000  0.090600000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 102  9.122276  0.006223822  0.103643287</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 130 11.023348 -0.149058000  0.118766538</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 73   8.344977 -0.305625000 -0.074943719</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 94   8.221157 -0.134954724  0.003091449</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 107 13.300000  3.150000000  0.280000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 147  8.508779  0.000000000  0.000000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 153  8.948813  0.056892040  0.091027264</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 167 11.413211  0.000000000  0.058260596</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 178  9.626131 -0.085942356 -0.058077514</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 199  9.037461  0.732881813  0.027998147</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 200  9.646746  1.169230769  0.057337278</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 203  8.462413  1.622995428  0.019809290</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## Calculate cross-validated confusion matrix and plot it in different ways</span></span></span>
+<span class="r-in"><span><span class="op">(</span><span class="va">glassConf</span> <span class="op">&lt;-</span> <span class="fu">confusion</span><span class="op">(</span><span class="fu"><a href="mlearning.html">cvpredict</a></span><span class="op">(</span><span class="va">glassLvq</span><span class="op">)</span>, <span class="va">Glass</span><span class="op">$</span><span class="va">Type</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 214 items classified with 128 true positives (error rate = 40.2%)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>             Predicted</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Actual        01  02  03  04  05  06 (sum) (FNR%)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   01 Glass 3   0  14   3   0   0   0    17    100</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   02 Glass 1   1  57  12   0   0   0    70     19</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   03 Glass 2   1  19  52   2   2   0    76     32</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   04 Glass 5   0   1   5   5   0   2    13     62</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   05 Glass 6   0   1   0   1   3   4     9     67</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   06 Glass 7   0   1   3   1   1  23    29     21</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   (sum)        2  93  75   9   6  29   214     35</span>
-<span class="r-in"><span class="co">## Raw confusion matrix: no sort and no margins</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">glassConf</span>, sums <span class="op">=</span> <span class="cn">FALSE</span>, sort <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 214 items classified with 140 true positives (error rate = 34.6%)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   01 Glass 6   2   1   3   1   1   1     9     78</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   02 Glass 5   0   4   3   0   1   5    13     69</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   03 Glass 7   1   1  22   0   1   4    29     24</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   04 Glass 3   0   0   0   0  11   6    17    100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   05 Glass 1   0   0   0   0  56  14    70     20</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   06 Glass 2   0   5   1   2  24  44    76     42</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   (sum)        3  11  29   3  94  74   214     40</span>
+<span class="r-in"><span><span class="co">## Raw confusion matrix: no sort and no margins</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">glassConf</span>, sums <span class="op">=</span> <span class="cn">FALSE</span>, sort <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 214 items classified with 128 true positives (error rate = 40.2%)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>             Predicted</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Actual       01 02 03 04 05 06</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   01 Glass 1 57 12  1  0  0  0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   02 Glass 2 19 52  1  2  2  0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   03 Glass 3 14  3  0  0  0  0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   04 Glass 5  1  5  0  5  0  2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   05 Glass 6  1  0  0  1  3  4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   06 Glass 7  1  3  0  1  1 23</span>
-<span class="r-in"><span class="co">## Graphs</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">glassConf</span><span class="op">)</span> <span class="co"># Image by default</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   01 Glass 1 56 14  0  0  0  0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   02 Glass 2 24 44  2  5  0  1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   03 Glass 3 11  6  0  0  0  0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   04 Glass 5  1  5  0  4  0  3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   05 Glass 6  1  1  1  1  2  3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   06 Glass 7  1  4  0  1  1 22</span>
+<span class="r-in"><span><span class="co">## Graphs</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">glassConf</span><span class="op">)</span> <span class="co"># Image by default</span></span></span>
 <span class="r-plt img"><img src="confusion-1.png" alt="" width="700" height="433"></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">glassConf</span>, sort <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="co"># No sorting</span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">glassConf</span>, sort <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="co"># No sorting</span></span></span>
 <span class="r-plt img"><img src="confusion-2.png" alt="" width="700" height="433"></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">glassConf</span>, type <span class="op">=</span> <span class="st">"barplot"</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">glassConf</span>, type <span class="op">=</span> <span class="st">"barplot"</span><span class="op">)</span></span></span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>argument 1 does not name a graphical parameter</span>
 <span class="r-plt img"><img src="confusion-3.png" alt="" width="700" height="433"></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">glassConf</span>, type <span class="op">=</span> <span class="st">"stars"</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">glassConf</span>, type <span class="op">=</span> <span class="st">"stars"</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="confusion-4.png" alt="" width="700" height="433"></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">glassConf</span>, type <span class="op">=</span> <span class="st">"dendrogram"</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">glassConf</span>, type <span class="op">=</span> <span class="st">"dendrogram"</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="confusion-5.png" alt="" width="700" height="433"></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">glassConf</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 214 items classified with 140 true positives (error = 34.6%)</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">glassConf</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 214 items classified with 128 true positives (error = 40.2%)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Global statistics on reweighted data:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Error rate: 34.6%, F(micro-average): 0.513, F(macro-average): 0.506</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Error rate: 40.2%, F(micro-average): 0.469, F(macro-average): 0.449</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>            Fscore    Recall Precision Specificity       NPV        FPR</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 7 0.7931034 0.7931034 0.7931034   0.9675676 0.9675676 0.03243243</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 1 0.6993865 0.8142857 0.6129032   0.7500000 0.8925620 0.25000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 2 0.6887417 0.6842105 0.6933333   0.8333333 0.8273381 0.16666667</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 5 0.4545455 0.3846154 0.5555556   0.9800995 0.9609756 0.01990050</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 6 0.4000000 0.3333333 0.5000000   0.9853659 0.9711538 0.01463415</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 3 0.0000000 0.0000000 0.0000000   0.9898477 0.9198113 0.01015228</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>            Fscore    Recall Precision Specificity       NPV         FPR</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 7 0.7586207 0.7586207 0.7586207   0.9621622 0.9621622 0.037837838</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 1 0.6829268 0.8000000 0.5957447   0.7361111 0.8833333 0.263888889</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 2 0.5866667 0.5789474 0.5945946   0.7826087 0.7714286 0.217391304</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 5 0.3333333 0.3076923 0.3636364   0.9651741 0.9556650 0.034825871</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 6 0.3333333 0.2222222 0.6666667   0.9951220 0.9668246 0.004878049</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 3 0.0000000 0.0000000 0.0000000   0.9847716 0.9194313 0.015228426</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>               FNR       FDR        FOR      LRPT      LRNT      LRPS      LRNS</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 7 0.2068966 0.2068966 0.03243243 24.454023 0.2138316 24.454023 0.2138316</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 1 0.1857143 0.3870968 0.10743802  3.257143 0.2476190  5.704715 0.4336918</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 2 0.3157895 0.3066667 0.17266187  4.105263 0.3789474  4.015556 0.3706667</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 5 0.6153846 0.4444444 0.03902439 19.326923 0.6278797 14.236111 0.4624929</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 6 0.6666667 0.5000000 0.02884615 22.777778 0.6765677 17.333333 0.5148515</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 3 1.0000000 1.0000000 0.08018868  0.000000 1.0102564  0.000000 1.0871795</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>            BalAcc         MCC      Chisq        Bray Auto Manu A_M TP FP FN  TN</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 7 0.8803355  0.76067102 123.824764 0.000000000   29   29   0 23  6  6 179</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 1 0.7821429  0.53406628  61.038534 0.053738318   93   70  23 57 36 13 108</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 2 0.7587719  0.51910531  57.666648 0.002336449   75   76  -1 52 23 24 115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 5 0.6823574  0.43403526  40.314734 0.009345794    9   13  -4  5  4  8 197</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 6 0.6593496  0.38750013  32.133458 0.007009346    6    9  -3  3  3  6 202</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 3 0.4949239 -0.02853241   0.174217 0.035046729    2   17 -15  0  2 17 195</span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">glassConf</span>, type <span class="op">=</span> <span class="st">"Fscore"</span><span class="op">)</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 7 0.2413793 0.2413793 0.03783784 20.049261 0.2508718 20.049261 0.2508718</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 1 0.2000000 0.4042553 0.11666667  3.031579 0.2716981  5.106383 0.4576475</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 2 0.4210526 0.4054054 0.22857143  2.663158 0.5380117  2.601351 0.5255255</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 5 0.6923077 0.6363636 0.04433498  8.835165 0.7172879  8.202020 0.6658857</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 6 0.7777778 0.3333333 0.03317536 45.555556 0.7815904 20.095238 0.3447712</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 3 1.0000000 1.0000000 0.08056872  0.000000 1.0154639  0.000000 1.0876289</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>            BalAcc         MCC       Chisq        Bray Auto Manu A_M TP FP FN</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 7 0.8603914  0.72078285 111.1789748 0.000000000   29   29   0 22  7  7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 1 0.7680556  0.50679290  54.9635559 0.056074766   94   70  24 56 38 14</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 2 0.6807780  0.36378276  28.3203096 0.004672897   74   76  -2 44 30 32</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 5 0.6364332  0.29517221  18.6450993 0.004672897   11   13  -2  4  7  9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 6 0.6086721  0.37106016  29.4647281 0.014018692    3    9  -6  2  1  7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 3 0.4923858 -0.03502763   0.2625641 0.032710280    3   17 -14  0  3 17</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          TN</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 7 178</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 1 106</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 2 108</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 5 194</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 6 204</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 3 194</span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">glassConf</span>, type <span class="op">=</span> <span class="st">"Fscore"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   Glass 7   Glass 1   Glass 2   Glass 5   Glass 6   Glass 3 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 0.7931034 0.6993865 0.6887417 0.4545455 0.4000000 0.0000000 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 0.7586207 0.6829268 0.5866667 0.3333333 0.3333333 0.0000000 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"stat.type")</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Fscore"</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## Build another classifier and make a comparison</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">glassNaiveBayes</span> <span class="op">&lt;-</span> <span class="fu"><a href="mlearning.html">mlNaiveBayes</a></span><span class="op">(</span><span class="va">Type</span> <span class="op">~</span> <span class="va">.</span>, data <span class="op">=</span> <span class="va">Glass</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## Build another classifier and make a comparison</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">glassNaiveBayes</span> <span class="op">&lt;-</span> <span class="fu"><a href="mlearning.html">mlNaiveBayes</a></span><span class="op">(</span><span class="va">Type</span> <span class="op">~</span> <span class="va">.</span>, data <span class="op">=</span> <span class="va">Glass</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> A mlearning object of class mlNaiveBayes (naive Bayes classifier):</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Initial call: mlNaiveBayes.formula(formula = Type ~ ., data = Glass)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
@@ -469,144 +511,144 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span>   Glass 6 0.00000000 0.00000000</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   Glass 7 0.01344828 0.02979404</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-in"><span class="op">(</span><span class="va">glassConf2</span> <span class="op">&lt;-</span> <span class="fu">confusion</span><span class="op">(</span><span class="fu"><a href="mlearning.html">cvpredict</a></span><span class="op">(</span><span class="va">glassNaiveBayes</span><span class="op">)</span>, <span class="va">Glass</span><span class="op">$</span><span class="va">Type</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 214 items classified with 86 true positives (error rate = 59.8%)</span>
+<span class="r-in"><span><span class="op">(</span><span class="va">glassConf2</span> <span class="op">&lt;-</span> <span class="fu">confusion</span><span class="op">(</span><span class="fu"><a href="mlearning.html">cvpredict</a></span><span class="op">(</span><span class="va">glassNaiveBayes</span><span class="op">)</span>, <span class="va">Glass</span><span class="op">$</span><span class="va">Type</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 214 items classified with 84 true positives (error rate = 60.7%)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>             Predicted</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Actual        01  02  03  04  05  06 (sum) (FNR%)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   01 Glass 3   5  10   1   0   1   0    17     71</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   02 Glass 1  17  46   6   0   1   0    70     34</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   03 Glass 2  10  45   9   5   7   0    76     88</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   04 Glass 5   0   0   5   1   6   1    13     92</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   01 Glass 3   5  11   0   0   1   0    17     71</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   02 Glass 1  16  47   6   0   1   0    70     33</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   03 Glass 2  16  41   7   5   7   0    76     91</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   04 Glass 5   0   0   6   0   6   1    13    100</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   05 Glass 6   0   0   0   0   8   1     9     11</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   06 Glass 7   0   1   0   1  10  17    29     41</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   (sum)       32 102  21   7  33  19   214     60</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## Comparison plot for two classifiers</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">glassConf</span>, <span class="va">glassConf2</span><span class="op">)</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   (sum)       37 100  19   6  33  19   214     61</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## Comparison plot for two classifiers</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">glassConf</span>, <span class="va">glassConf2</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="confusion-6.png" alt="" width="700" height="433"></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## When the probabilities in each class do not match the proportions in the</span></span>
-<span class="r-in"><span class="co">## training set, all these calculations are useless. Having an idea of</span></span>
-<span class="r-in"><span class="co">## the real proportions (so-called, priors), one should first reweight the</span></span>
-<span class="r-in"><span class="co">## confusion matrix before calculating statistics, for instance:</span></span>
-<span class="r-in"><span class="va">prior1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">10</span>, <span class="fl">10</span>, <span class="fl">10</span>, <span class="fl">100</span>, <span class="fl">100</span>, <span class="fl">100</span><span class="op">)</span> <span class="co"># Glass types 1-3 are rare</span></span>
-<span class="r-in"><span class="fu">prior</span><span class="op">(</span><span class="va">glassConf</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="va">prior1</span></span>
-<span class="r-in"><span class="va">glassConf</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 214 items classified with 140 true positives (error rate = 34.6%)</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## When the probabilities in each class do not match the proportions in the</span></span></span>
+<span class="r-in"><span><span class="co">## training set, all these calculations are useless. Having an idea of</span></span></span>
+<span class="r-in"><span><span class="co">## the real proportions (so-called, priors), one should first reweight the</span></span></span>
+<span class="r-in"><span><span class="co">## confusion matrix before calculating statistics, for instance:</span></span></span>
+<span class="r-in"><span><span class="va">prior1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">10</span>, <span class="fl">10</span>, <span class="fl">10</span>, <span class="fl">100</span>, <span class="fl">100</span>, <span class="fl">100</span><span class="op">)</span> <span class="co"># Glass types 1-3 are rare</span></span></span>
+<span class="r-in"><span><span class="fu">prior</span><span class="op">(</span><span class="va">glassConf</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="va">prior1</span></span></span>
+<span class="r-in"><span><span class="va">glassConf</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 214 items classified with 128 true positives (error rate = 40.2%)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> with initial row frequencies:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Glass 1 Glass 2 Glass 3 Glass 5 Glass 6 Glass 7 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>      70      76      17      13       9      29 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Rescaled to:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>             Predicted</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Actual        01  02  03  04  05  06 (sum) (FNR%)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   01 Glass 6  33  44   0  11  11   0   100     67</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   02 Glass 7   3  79  10   3   3   0   100     21</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   03 Glass 2   0   0   7   0   2   0    10     32</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   04 Glass 5   0  15  38  38   8   0   100     62</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   05 Glass 1   0   0   2   0   8   0    10     19</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   06 Glass 3   0   0   2   0   8   0    10    100</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   (sum)       37 139  59  53  41   0   330     50</span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">glassConf</span>, type <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Fscore"</span>, <span class="st">"Recall"</span>, <span class="st">"Precision"</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 214 items classified with 140 true positives (error = 34.6%)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   01 Glass 1   8   0   2   0   0   0    10     20</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   02 Glass 3   6   0   4   0   0   0    10    100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   03 Glass 2   3   0   6   1   0   0    10     42</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   04 Glass 5   8   0  38  31   0  23   100     69</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   05 Glass 6  11  11  11  11  22  33   100     78</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   06 Glass 7   3   0  14   3   3  76   100     24</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   (sum)       40  11  75  46  26 132   330     57</span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">glassConf</span>, type <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Fscore"</span>, <span class="st">"Recall"</span>, <span class="st">"Precision"</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 214 items classified with 128 true positives (error = 40.2%)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Global statistics on reweighted data:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Error rate: 49.7%, F(micro-average): 0.456, F(macro-average): 0.361</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Error rate: 56.8%, F(micro-average): 0.42, F(macro-average): 0.314</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>            Fscore    Recall Precision</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 7 0.6632980 0.7931034 0.5700064</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 5 0.5018334 0.3846154 0.7218204</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 6 0.4864590 0.3333333 0.8998122</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 1 0.3185168 0.8142857 0.1979793</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 2 0.1979562 0.6842105 0.1157179</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 3 0.0000000 0.0000000 0.0000000</span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">glassConf</span><span class="op">)</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>            Fscore    Recall  Precision</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 7 0.6528468 0.7586207 0.57295946</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 5 0.4215353 0.3076923 0.66909250</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 6 0.3536585 0.2222222 0.86567164</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 1 0.3207687 0.8000000 0.20060091</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 2 0.1367302 0.5789474 0.07751894</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 3 0.0000000 0.0000000 0.00000000</span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">glassConf</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="confusion-7.png" alt="" width="700" height="433"></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## This is very different than if glass types 1-3 are abundants!</span></span>
-<span class="r-in"><span class="va">prior2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">100</span>, <span class="fl">100</span>, <span class="fl">10</span>, <span class="fl">10</span>, <span class="fl">10</span><span class="op">)</span> <span class="co"># Glass types 1-3 are abundants</span></span>
-<span class="r-in"><span class="fu">prior</span><span class="op">(</span><span class="va">glassConf</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="va">prior2</span></span>
-<span class="r-in"><span class="va">glassConf</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 214 items classified with 140 true positives (error rate = 34.6%)</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## This is very different than if glass types 1-3 are abundants!</span></span></span>
+<span class="r-in"><span><span class="va">prior2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">100</span>, <span class="fl">100</span>, <span class="fl">10</span>, <span class="fl">10</span>, <span class="fl">10</span><span class="op">)</span> <span class="co"># Glass types 1-3 are abundants</span></span></span>
+<span class="r-in"><span><span class="fu">prior</span><span class="op">(</span><span class="va">glassConf</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="va">prior2</span></span></span>
+<span class="r-in"><span><span class="va">glassConf</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 214 items classified with 128 true positives (error rate = 40.2%)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> with initial row frequencies:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Glass 1 Glass 2 Glass 3 Glass 5 Glass 6 Glass 7 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>      70      76      17      13       9      29 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Rescaled to:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>             Predicted</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Actual        01  02  03  04  05  06 (sum) (FNR%)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   01 Glass 2  68  25   1   3   3   0   100     32</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   02 Glass 1  17  81   1   0   0   0   100     19</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   03 Glass 3  18  82   0   0   0   0   100    100</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   04 Glass 5   4   1   0   4   0   2    10     62</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   05 Glass 6   0   1   0   1   3   4    10     67</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   06 Glass 7   1   0   0   0   0   8    10     21</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   (sum)      108 191   3   8   6  14   330     50</span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">glassConf</span>, type <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Fscore"</span>, <span class="st">"Recall"</span>, <span class="st">"Precision"</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 214 items classified with 140 true positives (error = 34.6%)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   01 Glass 2  58  32   3   7   0   1   100     42</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   02 Glass 1  20  80   0   0   0   0   100     20</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   03 Glass 3  35  65   0   0   0   0   100    100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   04 Glass 5   4   1   0   3   0   2    10     69</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   05 Glass 6   1   1   1   1   2   3    10     78</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   06 Glass 7   1   0   0   0   0   8    10     24</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   (sum)      120 179   4  11   3  15   330     54</span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">glassConf</span>, type <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Fscore"</span>, <span class="st">"Recall"</span>, <span class="st">"Precision"</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 214 items classified with 128 true positives (error = 40.2%)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Global statistics on reweighted data:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Error rate: 50%, F(micro-average): 0.469, F(macro-average): 0.453</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Error rate: 54.3%, F(micro-average): 0.439, F(macro-average): 0.394</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>            Fscore    Recall Precision</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 7 0.6632980 0.7931034 0.5700064</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 2 0.6576051 0.6842105 0.6329914</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 1 0.5596337 0.8142857 0.4263127</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 5 0.4289310 0.3846154 0.4847886</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 6 0.4087537 0.3333333 0.5282838</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 7 0.6181966 0.7586207 0.5216390</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 1 0.5744857 0.8000000 0.4481542</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 2 0.5274536 0.5789474 0.4843717</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 6 0.3536585 0.2222222 0.8656716</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 5 0.2914883 0.3076923 0.2769057</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Glass 3 0.0000000 0.0000000 0.0000000</span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">glassConf</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">glassConf</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="confusion-8.png" alt="" width="700" height="433"></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## Weight can also be used to construct a matrix of relative frequencies</span></span>
-<span class="r-in"><span class="co">## In this case, all rows sum to one</span></span>
-<span class="r-in"><span class="fu">prior</span><span class="op">(</span><span class="va">glassConf</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fl">1</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">glassConf</span>, digits <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 214 items classified with 140 true positives (error rate = 34.6%)</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## Weight can also be used to construct a matrix of relative frequencies</span></span></span>
+<span class="r-in"><span><span class="co">## In this case, all rows sum to one</span></span></span>
+<span class="r-in"><span><span class="fu">prior</span><span class="op">(</span><span class="va">glassConf</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fl">1</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">glassConf</span>, digits <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 214 items classified with 128 true positives (error rate = 40.2%)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> with initial row frequencies:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Glass 1 Glass 2 Glass 3 Glass 5 Glass 6 Glass 7 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>      70      76      17      13       9      29 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Rescaled to:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>             Predicted</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Actual           01     02     03     04     05     06  (sum) (FNR%)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   01 Glass 1   0.81   0.01   0.00   0.00   0.17   0.00   1.00  19.00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   02 Glass 3   0.82   0.00   0.00   0.00   0.18   0.00   1.00 100.00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   03 Glass 6   0.11   0.00   0.33   0.44   0.00   0.11   1.00  67.00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   04 Glass 7   0.03   0.00   0.03   0.79   0.10   0.03   1.00  21.00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   05 Glass 2   0.25   0.01   0.03   0.00   0.68   0.03   1.00  32.00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   06 Glass 5   0.08   0.00   0.00   0.15   0.38   0.38   1.00  62.00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   (sum)        2.11   0.03   0.39   1.39   1.52   0.56   6.00  50.00</span>
-<span class="r-in"><span class="co">## However, it is easier to work with relative frequencies in percent</span></span>
-<span class="r-in"><span class="co">## and one gets a more compact presentation</span></span>
-<span class="r-in"><span class="fu">prior</span><span class="op">(</span><span class="va">glassConf</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fl">100</span></span>
-<span class="r-in"><span class="va">glassConf</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 214 items classified with 140 true positives (error rate = 34.6%)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   01 Glass 6   0.22   0.33   0.11   0.11   0.11   0.11   1.00  78.00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   02 Glass 7   0.03   0.76   0.03   0.00   0.14   0.03   1.00  24.00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   03 Glass 1   0.00   0.00   0.80   0.00   0.20   0.00   1.00  20.00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   04 Glass 3   0.00   0.00   0.65   0.00   0.35   0.00   1.00 100.00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   05 Glass 2   0.00   0.01   0.32   0.03   0.58   0.07   1.00  42.00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   06 Glass 5   0.00   0.23   0.08   0.00   0.38   0.31   1.00  69.00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   (sum)        0.26   1.34   1.99   0.14   1.77   0.52   6.00  56.00</span>
+<span class="r-in"><span><span class="co">## However, it is easier to work with relative frequencies in percent</span></span></span>
+<span class="r-in"><span><span class="co">## and one gets a more compact presentation</span></span></span>
+<span class="r-in"><span><span class="fu">prior</span><span class="op">(</span><span class="va">glassConf</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fl">100</span></span></span>
+<span class="r-in"><span><span class="va">glassConf</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 214 items classified with 128 true positives (error rate = 40.2%)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> with initial row frequencies:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Glass 1 Glass 2 Glass 3 Glass 5 Glass 6 Glass 7 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>      70      76      17      13       9      29 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Rescaled to:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>             Predicted</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Actual        01  02  03  04  05  06 (sum) (FNR%)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   01 Glass 1  81   1   0   0  17   0   100     19</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   02 Glass 3  82   0   0   0  18   0   100    100</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   03 Glass 6  11   0  33  44   0  11   100     67</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   04 Glass 7   3   0   3  79  10   3   100     21</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   05 Glass 2  25   1   3   0  68   3   100     32</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   06 Glass 5   8   0   0  15  38  38   100     62</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   (sum)      211   3  39 139 152  56   600     50</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## To reset row class frequencies to original propotions, just assign NULL</span></span>
-<span class="r-in"><span class="fu">prior</span><span class="op">(</span><span class="va">glassConf</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="cn">NULL</span></span>
-<span class="r-in"><span class="va">glassConf</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 214 items classified with 140 true positives (error rate = 34.6%)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   01 Glass 6  22  33  11  11  11  11   100     78</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   02 Glass 7   3  76   3   0  14   3   100     24</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   03 Glass 1   0   0  80   0  20   0   100     20</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   04 Glass 3   0   0  65   0  35   0   100    100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   05 Glass 2   0   1  32   3  58   7   100     42</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   06 Glass 5   0  23   8   0  38  31   100     69</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   (sum)       26 134 199  14 177  52   600     56</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## To reset row class frequencies to original propotions, just assign NULL</span></span></span>
+<span class="r-in"><span><span class="fu">prior</span><span class="op">(</span><span class="va">glassConf</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="cn">NULL</span></span></span>
+<span class="r-in"><span><span class="va">glassConf</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 214 items classified with 128 true positives (error rate = 40.2%)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>             Predicted</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Actual        01  02  03  04  05  06 (sum) (FNR%)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   01 Glass 3   0  14   3   0   0   0    17    100</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   02 Glass 1   1  57  12   0   0   0    70     19</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   03 Glass 2   1  19  52   2   2   0    76     32</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   04 Glass 5   0   1   5   5   0   2    13     62</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   05 Glass 6   0   1   0   1   3   4     9     67</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   06 Glass 7   0   1   3   1   1  23    29     21</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   (sum)        2  93  75   9   6  29   214     35</span>
-<span class="r-in"><span class="fu">prior</span><span class="op">(</span><span class="va">glassConf</span><span class="op">)</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   01 Glass 6   2   1   3   1   1   1     9     78</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   02 Glass 5   0   4   3   0   1   5    13     69</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   03 Glass 7   1   1  22   0   1   4    29     24</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   04 Glass 3   0   0   0   0  11   6    17    100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   05 Glass 1   0   0   0   0  56  14    70     20</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   06 Glass 2   0   5   1   2  24  44    76     42</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   (sum)        3  11  29   3  94  74   214     40</span>
+<span class="r-in"><span><span class="fu">prior</span><span class="op">(</span><span class="va">glassConf</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Glass 1 Glass 2 Glass 3 Glass 5 Glass 6 Glass 7 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>      70      76      17      13       9      29 </span>
 </code></pre></div>
