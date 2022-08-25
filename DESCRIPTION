@@ -22,11 +22,11 @@ Maintainer: Philippe Grosjean <phgrosjean@sciviews.org>
 Depends: R (>= 3.0.4)
 Imports: stats, grDevices, class, nnet, MASS, e1071, randomForest, ipred
 Suggests: mlbench, datasets, RColorBrewer, spelling, knitr, rmarkdown, covr
-URL: https://www.sciviews.org/mlearning/, https://www.sciviews.org/mlearning/
+URL: https://www.sciviews.org/mlearning/
 BugReports: https://github.com/SciViews/mlearning/issues
 License: GPL (>= 2)
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.2
 VignetteBuilder: knitr
 Encoding: UTF-8
 Language: en-US
