@@ -17,6 +17,10 @@
 \alias{mlQda.default}
 \alias{mlQda.formula}
 \alias{predict.mlQda}
+\alias{mlRpart}
+\alias{mlRpart.default}
+\alias{mlRpart.formula}
+\alias{predict.mlRpart}
 \alias{mlRforest}
 \alias{mlRforest.default}
 \alias{mlRforest.formula}
@@ -80,6 +84,12 @@ mlQda(train, ...)
 \method{predict}{mlQda}(object, newdata, type = c("class", "membership", "both"),
     prior = object$prior, method = c("plug-in", "predictive", "debiased",
     "looCV", "cv"), ...)
+
+mlRpart(train, ...)
+\method{mlRpart}{default}(train, response, ..., .args. = NULL)
+\method{mlRpart}{formula}(formula, data, ..., subset, na.action)
+\method{predict}{mlRpart}(object, newdata, type = c("class", "membership", "both"),
+  method = c("direct", "cv"), ...)
 
 mlRforest(train, ...)
 \method{mlRforest}{default}(train, response, ntree = 500, mtry, replace = TRUE, classwt = NULL, ...)
@@ -217,6 +227,7 @@ train(object, ...)
   \item{eps}{ double for specifying an epsilon-range to apply laplace smoothing
     (to replace zero or close-zero probabilities by 'threshold') for Naive Bayes
     predictions. }
+  \item{.args.}{ Used internally, do not provide anything here. }
 }
 
 \value{
@@ -306,6 +317,21 @@ confusion(predict(res, newdata = irisTest), irisTest$Species) # Performances
 ## Another dataset (binary predictor... not optimal for qda, just for test)
 summary(res <- mlQda(Class ~ ., data = HouseVotes84, na.action = na.omit))
 confusion(res) # Self-consistency
+
+
+## Supervised classification using rpart
+summary(res <- mlRpart(Species ~ ., data = irisTrain))
+plot(res, margin = 0.03, uniform = TRUE)
+text(res, use.n = FALSE)
+predict(res) # Default type is class
+predict(res, type = "membership")
+predict(res, type = "both")
+confusion(res) # Self-consistency
+## Cross-validation prediction is a good choice when there is no test set:
+predict(res, method = "cv")  # Idem: cvpredict(res)
+confusion(res, method = "cv") # Cross-validation for performances estimation
+## Evaluation of performances using a separate test set
+confusion(predict(res, newdata = irisTest), irisTest$Species) # Test set perfs
 
 
 ## Supervised classification using random forest

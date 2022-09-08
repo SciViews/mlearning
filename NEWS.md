@@ -1,3 +1,7 @@
+# mlearning 1.2.0
+
+-   The `mlRpart()` function implements `rpart::rpart()` for using decision trees.
+
 # mlearning 1.1.1
 
 -   The description is extended.

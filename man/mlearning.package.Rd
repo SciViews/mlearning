@@ -13,8 +13,8 @@
   \tabular{ll}{
     Package: \tab mlearning\cr
     Type: \tab Package\cr
-    Version: \tab 1.0.3\cr
-    Date: \tab 2017-12-12\cr
+    Version: \tab 1.2.0\cr
+    Date: \tab 2022-09-08\cr
     License: \tab GPL 2 or above at your convenience.\cr
   }
 }

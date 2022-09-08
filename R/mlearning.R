@@ -626,6 +626,68 @@ prior = object$prior, method = c("plug-in", "predictive", "debiased", "looCV",
     stop("unrecognized 'type' (must be 'class', 'membership' or 'both')"))
 }
 
+# rpart() from {rpart}
+mlRpart <- function(train, ...)
+  UseMethod("mlRpart")
+
+mlRpart.formula <- function(formula, data, ..., subset, na.action) {
+  mlearning(formula, data = data, method = "mlRpart", model.args =
+    list(formula  = formula, data = substitute(data),
+        subset = substitute(subset)), call = match.call(), ...,
+    subset = subset, na.action = substitute(na.action))
+}
+
+mlRpart.default <- function(train, response, ..., .args. = NULL) {
+  dots <- list(...)
+  if (is.null(.args.) || !length(.args.)) {
+    if (!length(response)) {# unsupervised
+      stop("Unsupervised classification is not possible with mlRpart(), see hclust() instead.")
+    } else if (is.factor(response)) {
+      type <- "classification"
+    } else type <- "regression"
+
+    .args. <- list(levels = levels(response),
+      n = c(intial = NROW(train), final = NROW(train)),
+      type = type, na.action = "na.pass",
+      mlearning.call = match.call(), method = "mlRpart")
+  }
+
+  # Combine train + response and use the formula interface which is the only one
+  data <- train
+  data$.class <- response
+  res <- rpart::rpart(.class ~ ., data = data, ...)
+  res$predicted <- predict(res, type = "class")
+
+  # Return a mlearning object
+  structure(res, formula = .args.$formula, train = train,
+    response = response, levels = .args.$levels, n = .args.$n, args = dots,
+    optim = .args.$optim, numeric.only = FALSE, type = .args.$type,
+    pred.type = c(class = "class", membership = "prob"),
+    summary = NULL, na.action = .args.$na.action,
+    mlearning.call = .args.$mlearning.call, method = .args.$method,
+    algorithm = "recursive partitioning tree",
+    class = c("mlRpart", "mlearning", "rpart"))
+}
+
+predict.mlRpart <- function(object, newdata,
+type = c("class", "membership", "both"),
+  method = c("direct", "cv"), ...) {
+
+  type <- as.character(type)[1]
+
+  # If method == "cv", delegate to cvpredict()
+  method <- as.character(method)[1]
+  if (method == "cv") {
+    if (!missing(newdata))
+      stop("cannot handle new data with method = 'cv'")
+    return(cvpredict(object = object, type = type, ...))
+  } else {
+    predict.mlearning(object = object, newdata = newdata,
+      type = type, ...)
+  }
+}
+
+
 mlRforest <- function(train, ...)
   UseMethod("mlRforest")
 

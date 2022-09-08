@@ -1,7 +1,6 @@
 Package: mlearning
 Type: Package
-Version: 1.1.1
-Date: 2022-04-26
+Version: 1.2.0
 Title: Machine Learning Algorithms with Unified Interface and Confusion Matrices
 Description: A unified interface is provided to various machine learning
   algorithms like like linear or quadratic discriminant analysis, k-nearest
@@ -20,7 +19,7 @@ Authors@R: c(
     email = "kevin.denis@umons.ac.be"))
 Maintainer: Philippe Grosjean <phgrosjean@sciviews.org>
 Depends: R (>= 3.0.4)
-Imports: stats, grDevices, class, nnet, MASS, e1071, randomForest, ipred
+Imports: stats, grDevices, class, nnet, MASS, e1071, randomForest, ipred, rpart
 Suggests: mlbench, datasets, RColorBrewer, spelling, knitr, rmarkdown, covr
 URL: https://www.sciviews.org/mlearning/
 BugReports: https://github.com/SciViews/mlearning/issues
