@@ -28,9 +28,48 @@
     <loc>https://www.sciviews.org/mlearning/reference/index.html</loc>
   </url>
   <url>
+    <loc>https://www.sciviews.org/mlearning/reference/mlKnn.html</loc>
+  </url>
+  <url>
+    <loc>https://www.sciviews.org/mlearning/reference/mlLda.html</loc>
+  </url>
+  <url>
+    <loc>https://www.sciviews.org/mlearning/reference/mlLvq.html</loc>
+  </url>
+  <url>
+    <loc>https://www.sciviews.org/mlearning/reference/mlNaiveBayes.html</loc>
+  </url>
+  <url>
+    <loc>https://www.sciviews.org/mlearning/reference/mlNnet.html</loc>
+  </url>
+  <url>
+    <loc>https://www.sciviews.org/mlearning/reference/mlQda.html</loc>
+  </url>
+  <url>
+    <loc>https://www.sciviews.org/mlearning/reference/mlRforest.html</loc>
+  </url>
+  <url>
+    <loc>https://www.sciviews.org/mlearning/reference/mlRpart.html</loc>
+  </url>
+  <url>
+    <loc>https://www.sciviews.org/mlearning/reference/mlSvm.html</loc>
+  </url>
+  <url>
+    <loc>https://www.sciviews.org/mlearning/reference/mlearning-package.html</loc>
+  </url>
+  <url>
     <loc>https://www.sciviews.org/mlearning/reference/mlearning.html</loc>
   </url>
   <url>
-    <loc>https://www.sciviews.org/mlearning/reference/mlearning.package.html</loc>
+    <loc>https://www.sciviews.org/mlearning/reference/plot.confusion.html</loc>
+  </url>
+  <url>
+    <loc>https://www.sciviews.org/mlearning/reference/prior.html</loc>
+  </url>
+  <url>
+    <loc>https://www.sciviews.org/mlearning/reference/response.html</loc>
+  </url>
+  <url>
+    <loc>https://www.sciviews.org/mlearning/reference/train.html</loc>
   </url>
 </urlset>
