@@ -61,7 +61,6 @@
 #'- [response()] and [train()] to extract response and training variables from
 #' an **mlearning** object.
 #'
-#' @keywords internal
 #' @docType package
 #' @name mlearning-package
 
