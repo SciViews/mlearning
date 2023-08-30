@@ -231,7 +231,7 @@ specific components, inspect the "unclassed" object using <code><a href="https:/
 <span class="r-out co"><span class="r-pr">#&gt;</span> [73] versicolor virginica  virginica  virginica  virginica  virginica </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [79] virginica  virginica  virginica  virginica  virginica  virginica </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [85] virginica  virginica  virginica  virginica  virginica  virginica </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [91] virginica  virginica  virginica  versicolor virginica  virginica </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [91] virginica  virginica  virginica  virginica  virginica  virginica </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [97] virginica  virginica  virginica </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Levels: setosa versicolor virginica</span>
 <span class="r-in"><span><span class="co"># Self-consistency, do not use for assessing classifier performances!</span></span></span>
@@ -245,14 +245,14 @@ specific components, inspect the "unclassed" object using <code><a href="https:/
 <span class="r-out co"><span class="r-pr">#&gt;</span>   (sum)         33 34 32    99      3</span>
 <span class="r-in"><span><span class="co"># Use an independent test set instead</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="confusion.html">confusion</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/predict.html" class="external-link">predict</a></span><span class="op">(</span><span class="va">iris_knn</span>, newdata <span class="op">=</span> <span class="va">iris_test</span><span class="op">)</span>, <span class="va">iris_test</span><span class="op">$</span><span class="va">Species</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 50 items classified with 47 true positives (error rate = 6%)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 50 items classified with 48 true positives (error rate = 4%)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                Predicted</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Actual          01 02 03 04 (sum) (FNR%)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   01 setosa     16  0  0  0    16      0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   02 NA          0  0  0  0     0       </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   03 versicolor  0  1 15  1    17     12</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   04 virginica   0  0  1 16    17      6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   (sum)         16  1 16 17    50      6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   04 virginica   0  0  0 17    17      0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   (sum)         16  1 15 18    50      4</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
