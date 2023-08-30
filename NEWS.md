@@ -1,3 +1,9 @@
+# mlearning 1.2.1
+
+-   Documentation is refactored using Roxygen2 and considerably enhanced.
+
+-   All camelCase function names now have their equivalence in snake_case, e.g., `mlRforest` -\> `ml_rforest()`, or `confusionImage()` -\> `confusion_image()` in order to adapt to the coding preferences of the user.
+
 # mlearning 1.2.0
 
 -   The `mlRpart()` function implements `rpart::rpart()` for using decision trees.
