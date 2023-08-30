@@ -243,12 +243,12 @@ classification.</p></div>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">iris_lvq</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Codebook:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>          Class Sepal.Length Sepal.Width Petal.Length Petal.Width</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22      setosa     4.835625    3.268750     1.479375   0.2293750</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19      setosa     5.456604    3.867925     1.490566   0.3226415</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 64  versicolor     6.531660    2.954244     4.570598   1.3486280</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 62  versicolor     5.614894    2.614360     3.895502   1.2091618</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 114  virginica     5.982348    2.541214     5.176292   1.8530857</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 103  virginica     7.146875    3.131250     6.113750   2.1056250</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31      setosa     4.857042    3.290141     1.479577   0.2105634</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17      setosa     5.412000    3.888000     1.450000   0.3070000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 54  versicolor     5.605817    2.510948     3.738046   1.1099231</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 56  versicolor     6.463039    2.931024     4.605123   1.4483433</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 111  virginica     7.186534    3.052219     6.151875   2.0809507</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 116  virginica     6.110756    2.846276     5.128440   2.0232687</span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/stats/predict.html" class="external-link">predict</a></span><span class="op">(</span><span class="va">iris_lvq</span><span class="op">)</span> <span class="co"># This object only returns classes</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [1] setosa     setosa     setosa     setosa     setosa     setosa    </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [7] setosa     setosa     setosa     setosa     setosa     setosa    </span>
@@ -259,7 +259,7 @@ classification.</p></div>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [37] versicolor versicolor versicolor versicolor versicolor versicolor</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [43] versicolor versicolor versicolor versicolor versicolor versicolor</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [49] versicolor versicolor versicolor versicolor versicolor virginica </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [55] versicolor virginica  versicolor versicolor versicolor versicolor</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [55] versicolor versicolor versicolor versicolor versicolor versicolor</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [61] versicolor versicolor versicolor versicolor versicolor versicolor</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [67] virginica  virginica  virginica  virginica  virginica  virginica </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [73] versicolor virginica  virginica  virginica  virginica  virginica </span>
@@ -270,23 +270,23 @@ classification.</p></div>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Levels: setosa versicolor virginica</span>
 <span class="r-in"><span><span class="co">#' # Self-consistency, do not use for assessing classifier performances!</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="confusion.html">confusion</a></span><span class="op">(</span><span class="va">iris_lvq</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 99 items classified with 96 true positives (error rate = 3%)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 99 items classified with 97 true positives (error rate = 2%)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                Predicted</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Actual          01 02 03 (sum) (FNR%)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   01 setosa     33  0  0    33      0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   02 versicolor  0 31  2    33      6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   02 versicolor  0 32  1    33      3</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   03 virginica   0  1 32    33      3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   (sum)         33 32 34    99      3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   (sum)         33 33 33    99      2</span>
 <span class="r-in"><span><span class="co"># Use an independent test set instead</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="confusion.html">confusion</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/predict.html" class="external-link">predict</a></span><span class="op">(</span><span class="va">iris_lvq</span>, newdata <span class="op">=</span> <span class="va">iris_test</span><span class="op">)</span>, <span class="va">iris_test</span><span class="op">$</span><span class="va">Species</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 50 items classified with 48 true positives (error rate = 4%)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 50 items classified with 47 true positives (error rate = 6%)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                Predicted</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Actual          01 02 03 04 (sum) (FNR%)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   01 setosa     16  0  0  0    16      0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   02 NA          0  0  0  0     0       </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   03 versicolor  0  1 15  1    17     12</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   04 virginica   0  0  0 17    17      0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   (sum)         16  1 15 18    50      4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   04 virginica   0  0  1 16    17      6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   (sum)         16  1 16 17    50      6</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

@@ -236,13 +236,13 @@ specific components, inspect the "unclassed" object using <code><a href="https:/
 <span class="r-out co"><span class="r-pr">#&gt;</span> Levels: setosa versicolor virginica</span>
 <span class="r-in"><span><span class="co"># Self-consistency, do not use for assessing classifier performances!</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="confusion.html">confusion</a></span><span class="op">(</span><span class="va">iris_knn</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 99 items classified with 97 true positives (error rate = 2%)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 99 items classified with 96 true positives (error rate = 3%)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                Predicted</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Actual          01 02 03 (sum) (FNR%)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   01 setosa     33  0  0    33      0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   02 versicolor  0 32  1    33      3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   03 virginica   0  1 32    33      3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   (sum)         33 33 33    99      2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   03 virginica   0  2 31    33      6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   (sum)         33 34 32    99      3</span>
 <span class="r-in"><span><span class="co"># Use an independent test set instead</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="confusion.html">confusion</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/predict.html" class="external-link">predict</a></span><span class="op">(</span><span class="va">iris_knn</span>, newdata <span class="op">=</span> <span class="va">iris_test</span><span class="op">)</span>, <span class="va">iris_test</span><span class="op">$</span><span class="va">Species</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 50 items classified with 47 true positives (error rate = 6%)</span>
