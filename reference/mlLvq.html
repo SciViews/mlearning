@@ -243,12 +243,12 @@ classification.</p></div>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">iris_lvq</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Codebook:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>          Class Sepal.Length Sepal.Width Petal.Length Petal.Width</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25      setosa     4.828662    3.258599     1.460510   0.2152866</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15      setosa     5.462810    3.863636     1.472727   0.2495868</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 64  versicolor     5.833372    2.610241     4.027718   1.2175021</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 57  versicolor     6.553846    3.018462     4.596154   1.4223077</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 111  virginica     6.195060    2.786866     5.227170   1.9315662</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 129  virginica     7.212621    3.277670     6.098058   2.1000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9       setosa     4.660377    3.100943     1.433962   0.1773585</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8       setosa     5.230061    3.622699     1.507362   0.2625767</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 60  versicolor     5.562766    2.612224     3.855116   1.1475967</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 69  versicolor     6.465909    2.950533     4.420159   1.3611252</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 109  virginica     6.378270    2.903770     5.501573   2.0378277</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 106  virginica     7.575410    3.265574     6.472131   2.1245902</span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/stats/predict.html" class="external-link">predict</a></span><span class="op">(</span><span class="va">iris_lvq</span><span class="op">)</span> <span class="co"># This object only returns classes</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [1] setosa     setosa     setosa     setosa     setosa     setosa    </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [7] setosa     setosa     setosa     setosa     setosa     setosa    </span>
@@ -258,35 +258,35 @@ classification.</p></div>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [31] setosa     setosa     setosa     versicolor versicolor versicolor</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [37] versicolor versicolor versicolor versicolor versicolor versicolor</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [43] versicolor versicolor versicolor versicolor versicolor versicolor</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [49] versicolor versicolor versicolor versicolor versicolor virginica </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [55] versicolor virginica  versicolor versicolor versicolor versicolor</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [61] versicolor versicolor versicolor versicolor versicolor versicolor</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [49] versicolor versicolor versicolor versicolor versicolor versicolor</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [55] versicolor versicolor versicolor versicolor versicolor versicolor</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [61] virginica  versicolor versicolor versicolor versicolor versicolor</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [67] virginica  virginica  virginica  virginica  virginica  virginica </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [73] versicolor virginica  virginica  virginica  virginica  virginica </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [79] virginica  virginica  virginica  virginica  virginica  virginica </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [85] virginica  virginica  virginica  virginica  virginica  virginica </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [91] virginica  virginica  virginica  virginica  virginica  virginica </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [85] virginica  versicolor virginica  virginica  virginica  virginica </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [91] virginica  virginica  versicolor virginica  virginica  virginica </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [97] virginica  virginica  virginica </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Levels: setosa versicolor virginica</span>
 <span class="r-in"><span><span class="co">#' # Self-consistency, do not use for assessing classifier performances!</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="confusion.html">confusion</a></span><span class="op">(</span><span class="va">iris_lvq</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 99 items classified with 96 true positives (error rate = 3%)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 99 items classified with 95 true positives (error rate = 4%)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                Predicted</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Actual          01 02 03 (sum) (FNR%)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   01 setosa     33  0  0    33      0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   02 versicolor  0 31  2    33      6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   03 virginica   0  1 32    33      3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   (sum)         33 32 34    99      3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   02 versicolor  0 32  1    33      3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   03 virginica   0  3 30    33      9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   (sum)         33 35 31    99      4</span>
 <span class="r-in"><span><span class="co"># Use an independent test set instead</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="confusion.html">confusion</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/predict.html" class="external-link">predict</a></span><span class="op">(</span><span class="va">iris_lvq</span>, newdata <span class="op">=</span> <span class="va">iris_test</span><span class="op">)</span>, <span class="va">iris_test</span><span class="op">$</span><span class="va">Species</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 50 items classified with 48 true positives (error rate = 4%)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 50 items classified with 47 true positives (error rate = 6%)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                Predicted</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Actual          01 02 03 04 (sum) (FNR%)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   01 setosa     16  0  0  0    16      0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   02 NA          0  0  0  0     0       </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   03 versicolor  0  1 15  1    17     12</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   04 virginica   0  0  0 17    17      0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   (sum)         16  1 15 18    50      4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   04 virginica   0  0  1 16    17      6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   (sum)         16  1 16 17    50      6</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

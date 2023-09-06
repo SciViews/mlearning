@@ -237,109 +237,109 @@ the F1 score for each class = 2 * recall * precision / (recall + precision)).</p
 <span class="r-in"><span><span class="co"># (using default parameters)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">glass_lvq</span> <span class="op">&lt;-</span> <span class="fu"><a href="mlLvq.html">ml_lvq</a></span><span class="op">(</span><span class="va">Type</span> <span class="op">~</span> <span class="va">.</span>, data <span class="op">=</span> <span class="va">Glass</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Codebook:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       Class       RI       Na           Mg        Al       Si           K</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 63  Glass 1 1.521694 13.59043  3.990725793 0.9094547 72.01523  0.14579391</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7   Glass 1 1.521059 13.07075  4.103372783 0.8473620 73.29846  0.37743988</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 34  Glass 1 1.517929 12.58665  3.629106606 1.2936618 73.32089  0.55333957</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 68  Glass 1 1.521414 12.99878  3.889617882 0.7934280 72.35330  0.16995566</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 67  Glass 1 1.520088 12.65700  4.045400000 0.9843600 72.64360  0.34576000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 35  Glass 1 1.517406 12.90335  3.513231262 1.2498535 73.02203  0.59219507</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 59  Glass 1 1.518949 13.32596  3.988736000 1.0178040 73.38206  0.25774400</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22  Glass 1 1.520734 14.40385  3.997666027 0.1974609 72.09925  0.04850002</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 121 Glass 2 1.518000 12.74152  3.944281216 1.0276983 72.40564  0.65811726</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 114 Glass 2 1.517349 13.30204  3.962854978 1.3667218 72.46829  0.45627804</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 99  Glass 2 1.516487 12.51203  3.563313952 1.1265846 73.82137  0.46425959</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 80  Glass 2 1.516699 12.77170  4.540900000 1.6672000 73.53110 -0.94650000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 111 Glass 2 1.526975 11.85964  0.000000000 1.0945690 72.34003  0.20628403</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 101 Glass 2 1.517469 12.42232  3.110797958 0.9764117 73.55289  0.50124441</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 106 Glass 2 1.529429 10.64972  0.000000000 2.0907286 70.65190  0.74569286</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 76  Glass 2 1.516460 13.01526  3.514944907 1.5919963 73.09375  0.46848265</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 147 Glass 3 1.517611 13.51991  3.759109610 0.7179009 72.97630  0.04365230</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 148 Glass 3 1.444993 13.39231  4.770239100 0.2944106 72.97367  0.45442414</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 167 Glass 5 1.520825 11.84560  0.952847971 1.9327272 72.94806  0.56815986</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 177 Glass 6 1.517433 14.32028  2.843336175 1.3961537 73.06737 -0.51989687</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 199 Glass 7 1.515535 14.15913 -0.098719684 2.8584273 73.11888 -0.19135965</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 200 Glass 7 1.517464 14.74311  0.167159642 2.1239741 73.17683 -0.17697378</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 193 Glass 7 1.515671 13.53272 -0.004379341 2.6895681 74.40964 -0.15323070</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       Class       RI       Na         Mg        Al       Si           K</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 68  Glass 1 1.521578 12.95007 3.92060159 0.7609164 72.34307  0.13436937</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 38  Glass 1 1.519355 13.44587 4.02549187 0.8598053 73.27975 -0.65459788</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29  Glass 1 1.520683 12.93587 3.98669073 1.5911967 73.08568  0.55901650</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 59  Glass 1 1.518503 13.18995 3.80533210 1.0458458 73.14299  0.52751843</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 66  Glass 1 1.520291 13.61389 3.90550140 1.0625164 71.96650  0.23594792</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 33  Glass 1 1.517804 12.89570 3.60734181 1.2411209 73.05301  0.58662651</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 70  Glass 1 1.521656 13.45540 3.95871610 0.6610944 72.16606  0.11827573</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 48  Glass 1 1.523329 14.24472 4.01893496 0.4230803 71.93159  0.03217094</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 115 Glass 2 1.518567 13.00966 3.88981210 1.2259895 72.48994  0.56046870</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 117 Glass 2 1.517239 13.53893 3.97575235 1.2842881 72.38045  0.37785918</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 88  Glass 2 1.516742 13.11040 4.06636711 1.7041803 73.03254 -0.15782039</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 119 Glass 2 1.517708 13.27198 3.86833059 1.1580659 73.01953  0.42318193</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 106 Glass 2 1.528194 11.98583 0.00000000 1.3295772 71.46347  0.31723656</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 120 Glass 2 1.516509 13.29630 3.82530000 0.9039000 73.10880  0.39040000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 75  Glass 2 1.516204 13.03875 3.53608516 1.5833155 72.99700  0.57913827</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 85  Glass 2 1.509780 14.48487 4.34526300 1.8453460 73.06978 -0.42379600</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 162 Glass 3 1.517816 13.66737 3.61538989 0.6409221 72.92571  0.08737938</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 160 Glass 3 1.511979 12.91493 3.99933120 1.6205488 72.48891  0.78271680</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 166 Glass 5 1.520699 12.45088 0.80148788 1.7997257 72.95239  0.39569379</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 178 Glass 6 1.517809 14.77600 1.58108551 1.3885427 73.11796 -0.35529741</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 205 Glass 7 1.517259 14.49979 0.00000000 3.5128100 73.32193 -1.90200000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 196 Glass 7 1.516084 14.52729 0.05037736 2.6320693 73.21952 -0.11970653</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 214 Glass 7 1.517816 14.54594 0.04773913 2.0046758 73.00199  0.05534753</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>            Ca           Ba           Fe</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 63   9.206825  0.010724617 -0.015875870</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7    8.656951 -0.274615385 -0.085258413</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 34   8.547727 -0.006000823  0.025968176</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 68   9.730704 -0.019643909  0.117945793</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 67   9.147760  0.000000000  0.255320000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 35   8.574619 -0.010510399  0.033240025</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 59   8.564840 -0.547680000 -0.042000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22   9.311891 -0.125092909 -0.059868953</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 121  8.813795  0.000000000  0.289088634</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 114  8.302524 -0.187533268  0.152725268</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 99   8.684371 -0.417412231 -0.025376536</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 80   8.234000  0.000000000 -0.101400000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 111 14.303707  0.000000000  0.102835753</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 101  9.212638  0.027445782  0.180055196</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 106 13.425721  2.025000000  0.360078571</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 76   8.209506 -0.117284646  0.008686078</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 147  8.811514  0.054603120  0.072752345</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 148  8.426168 -0.502962704 -0.695615193</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 167 11.588343  0.014503215  0.052593840</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 177  9.236636 -0.353777421 -0.136577820</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 199  9.217433  0.900649271  0.007556161</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 200  8.597607  1.296505961  0.019066682</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 193  8.890591  0.644277876  0.075870632</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 68   9.813214 -0.016079322  0.147024767</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 38   9.042885 -0.082701208 -0.055399254</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29   8.530751  0.000000000 -0.219829500</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 59   8.307269 -0.085080812 -0.031852888</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 66   9.015965  0.052841224 -0.018509254</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 33   8.541861 -0.003446127  0.051153231</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 70   9.560170  0.000000000  0.086951807</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 48   9.306804 -0.141330556  0.022025897</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 115  8.619077 -0.066977972  0.173076048</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 117  8.486520 -0.394739095  0.148651809</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 88   8.099332  0.000000000  0.085611842</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 119  8.442326 -0.412500000  0.294176050</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 106 14.076300  0.583754180  0.160455896</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 120  8.637700 -0.660000000  0.000000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 75   8.154841 -0.126230585 -0.006288184</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 85   8.430369 -1.900743000  0.000000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 162  8.860970  0.076696295  0.122714072</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 160  8.494849 -0.405381600 -0.053035200</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 166 11.361974  0.015242174  0.080096215</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 178  9.915830 -0.397097497 -0.134253854</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 205  9.183520  1.471990000 -0.031200000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 196  8.897774  0.744367910  0.012255346</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 214  8.385990  1.893292340  0.007916969</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Calculate cross-validated confusion matrix</span></span></span>
 <span class="r-in"><span><span class="op">(</span><span class="va">glass_conf</span> <span class="op">&lt;-</span> <span class="fu">confusion</span><span class="op">(</span><span class="fu"><a href="mlearning.html">cvpredict</a></span><span class="op">(</span><span class="va">glass_lvq</span><span class="op">)</span>, <span class="va">Glass</span><span class="op">$</span><span class="va">Type</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 214 items classified with 138 true positives (error rate = 35.5%)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>             Predicted</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Actual        01  02  03  04  05  06 (sum) (FNR%)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   01 Glass 3   1  10   6   0   0   0    17     94</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   02 Glass 1   2  53  15   0   0   0    70     24</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   03 Glass 2   0  19  51   4   1   1    76     33</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   04 Glass 5   0   0   5   6   0   2    13     54</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   05 Glass 6   0   1   0   1   4   3     9     56</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   06 Glass 7   0   1   2   1   2  23    29     21</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   (sum)        3  84  79  12   7  29   214     36</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   01 Glass 3   2   8   7   0   0   0    17     88</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   02 Glass 1   2  56  12   0   0   0    70     20</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   03 Glass 2   0  21  50   5   0   0    76     34</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   04 Glass 5   0   1   3   7   0   2    13     46</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   05 Glass 6   0   3   1   0   1   4     9     89</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   06 Glass 7   0   2   3   1   1  22    29     24</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   (sum)        4  91  76  13   2  28   214     36</span>
 <span class="r-in"><span><span class="co"># Raw confusion matrix: no sort and no margins</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">glass_conf</span>, sums <span class="op">=</span> <span class="cn">FALSE</span>, sort <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 214 items classified with 138 true positives (error rate = 35.5%)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>             Predicted</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Actual       01 02 03 04 05 06</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   01 Glass 1 53 15  2  0  0  0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   02 Glass 2 19 51  0  4  1  1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   03 Glass 3 10  6  1  0  0  0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   04 Glass 5  0  5  0  6  0  2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   05 Glass 6  1  0  0  1  4  3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   06 Glass 7  1  2  0  1  2 23</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   01 Glass 1 56 12  2  0  0  0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   02 Glass 2 21 50  0  5  0  0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   03 Glass 3  8  7  2  0  0  0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   04 Glass 5  1  3  0  7  0  2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   05 Glass 6  3  1  0  0  1  4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   06 Glass 7  2  3  0  1  1 22</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">glass_conf</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 214 items classified with 138 true positives (error = 35.5%)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Global statistics on reweighted data:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Error rate: 35.5%, F(micro-average): 0.554, F(macro-average): 0.537</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Error rate: 35.5%, F(micro-average): 0.544, F(macro-average): 0.506</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>            Fscore     Recall Precision Specificity       NPV        FPR</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 7 0.7931034 0.79310345 0.7931034   0.9675676 0.9675676 0.03243243</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 1 0.6883117 0.75714286 0.6309524   0.7847222 0.8692308 0.21527778</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 2 0.6580645 0.67105263 0.6455696   0.7971014 0.8148148 0.20289855</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 6 0.5000000 0.44444444 0.5714286   0.9853659 0.9758454 0.01463415</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 5 0.4800000 0.46153846 0.5000000   0.9701493 0.9653465 0.02985075</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 3 0.1000000 0.05882353 0.3333333   0.9898477 0.9241706 0.01015228</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>            Fscore    Recall Precision Specificity       NPV         FPR</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 7 0.7719298 0.7586207 0.7857143   0.9675676 0.9623656 0.032432432</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 1 0.6956522 0.8000000 0.6153846   0.7569444 0.8861789 0.243055556</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 2 0.6578947 0.6578947 0.6578947   0.8115942 0.8115942 0.188405797</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 5 0.5384615 0.5384615 0.5384615   0.9701493 0.9701493 0.029850746</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 3 0.1904762 0.1176471 0.5000000   0.9898477 0.9285714 0.010152284</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 6 0.1818182 0.1111111 0.5000000   0.9951220 0.9622642 0.004878049</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>               FNR       FDR        FOR      LRPT      LRNT      LRPS      LRNS</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 7 0.2068966 0.2068966 0.03243243 24.454023 0.2138316 24.454023 0.2138316</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 1 0.2428571 0.3690476 0.13076923  3.517051 0.3094817  4.824930 0.4245681</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 2 0.3289474 0.3544304 0.18518519  3.307331 0.4126794  3.486076 0.4349827</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 6 0.5555556 0.4285714 0.02415459 30.370370 0.5638064 23.657143 0.4391796</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 5 0.5384615 0.5000000 0.03465347 15.461538 0.5550296 14.428571 0.5179487</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 3 0.9411765 0.6666667 0.07582938  5.794118 0.9508296  4.395833 0.7213675</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>            BalAcc       MCC     Chisq        Bray Auto Manu A_M TP FP FN  TN</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 7 0.8803355 0.7606710 123.82476 0.000000000   29   29   0 23  6  6 179</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 1 0.7709325 0.5206071  58.00080 0.032710280   84   70  14 53 31 17 113</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 2 0.7340770 0.4642530  46.12360 0.007009346   79   76   3 51 28 25 110</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 6 0.7149051 0.4849990  50.33793 0.004672897    7    9  -2  4  3  5 202</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 5 0.7158439 0.4482013  42.98926 0.002336449   12   13  -1  6  6  7 195</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 3 0.5243356 0.1119511   2.68207 0.032710280    3   17 -14  1  2 16 195</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 7 0.2413793 0.2142857 0.03763441 23.390805 0.2494702 20.877551 0.2226656</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 1 0.2000000 0.3846154 0.11382114  3.291429 0.2642202  5.406593 0.4340155</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 2 0.3421053 0.3421053 0.18840580  3.491903 0.4215226  3.491903 0.4215226</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 5 0.4615385 0.4615385 0.02985075 18.038462 0.4757396 18.038462 0.4757396</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 3 0.8823529 0.5000000 0.07142857 11.588235 0.8914027  7.000000 0.5384615</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 6 0.8888889 0.5000000 0.03773585 22.777778 0.8932462 13.250000 0.5196078</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>            BalAcc       MCC      Chisq        Bray Auto Manu A_M TP FP FN  TN</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 7 0.8630941 0.7370528 116.254820 0.002336449   28   29  -1 22  6  7 179</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 1 0.7784722 0.5285291  59.779400 0.049065421   91   70  21 56 35 14 109</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 2 0.7347445 0.4694889  47.169851 0.000000000   76   76   0 50 26 26 112</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 5 0.7543054 0.5086108  55.358577 0.000000000   13   13   0  7  6  6 195</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 3 0.5537474 0.2146373   9.858806 0.030373832    4   17 -13  2  2 15 195</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Glass 6 0.5531165 0.2216027  10.509056 0.016355140    2    9  -7  1  1  8 204</span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">glass_conf</span>, type <span class="op">=</span> <span class="st">"Fscore"</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Glass 7   Glass 1   Glass 2   Glass 6   Glass 5   Glass 3 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 0.7931034 0.6883117 0.6580645 0.5000000 0.4800000 0.1000000 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   Glass 7   Glass 1   Glass 2   Glass 5   Glass 3   Glass 6 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 0.7719298 0.6956522 0.6578947 0.5384615 0.1904762 0.1818182 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"stat.type")</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Fscore"</span>
 </code></pre></div>
