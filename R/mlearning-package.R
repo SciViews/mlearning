@@ -1,4 +1,4 @@
-#' Machine Learning Algorithms with Unified Interface and Confusion Matrices
+#' 'SciViews::R' - Machine Learning Algorithms with Unified Interface
 #'
 #' @description
 #' This package provides wrappers around several existing machine learning
@@ -60,9 +60,6 @@
 #'
 #'- [response()] and [train()] to extract response and training variables from
 #' an **mlearning** object.
-#'
-#' @docType package
-#' @name mlearning-package
 
 ## usethis namespace: start
 #' @importFrom graphics abline axis barplot image legend lines mtext par plot
@@ -79,4 +76,4 @@
 #' @importFrom ipred predict.ipredknn errorest control.errorest
 #' @importFrom rpart rpart
 ## usethis namespace: end
-NULL
+"_PACKAGE"

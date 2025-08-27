@@ -4,6 +4,8 @@
 
 -   All camelCase function names now have their equivalence in snake_case, e.g., `mlRforest` -\> `ml_rforest()`, or `confusionImage()` -\> `confusion_image()` in order to adapt to the coding preferences of the user.
 
+-   GitHub repository modernized ans Hex logo added.
+
 # mlearning 1.2.0
 
 -   The `mlRpart()` function implements `rpart::rpart()` for using decision trees.

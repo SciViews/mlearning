@@ -1,0 +1,21 @@
+---
+title: "'SciViews::R' - Machine Learning Algorithms with Unified Interface"
+author: "Philippe Grosjean (phgrosjean@sciviews.org)"
+date: "`r Sys.Date()`"
+output:
+  rmarkdown::html_vignette:
+    toc: true
+    toc_depth: 3
+    fig_caption: yes
+vignette: >
+  %\VignetteIndexEntry{'SciViews::R' - Machine Learning Algorithms with Unified Interface}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+library(mlearning)
+```
+
+TODO...

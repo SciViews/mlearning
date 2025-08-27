@@ -3,7 +3,7 @@
 \docType{package}
 \name{mlearning-package}
 \alias{mlearning-package}
-\title{Machine Learning Algorithms with Unified Interface and Confusion Matrices}
+\title{'SciViews::R' - Machine Learning Algorithms with Unified Interface}
 \description{
 This package provides wrappers around several existing machine learning
 algorithms in R, under a unified user interface. Confusion matrices can also
@@ -59,3 +59,22 @@ an \strong{mlearning} object.
 }
 }
 
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/SciViews/mlearning}
+  \item \url{https://www.sciviews.org/mlearning/}
+  \item \url{https://sciviews.r-universe.dev/mlearning}
+  \item Report bugs at \url{https://github.com/SciViews/mlearning/issues}
+}
+
+}
+\author{
+\strong{Maintainer}: Philippe Grosjean \email{phgrosjean@sciviews.org} (\href{https://orcid.org/0000-0002-2694-9471}{ORCID})
+
+Authors:
+\itemize{
+  \item Kevin Denis \email{kevin.denis@umons.ac.be}
+}
+
+}
