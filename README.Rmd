@@ -47,7 +47,7 @@ R should install all required dependencies automatically, and then it should com
 
 ## Further explore {mlearning}
 
-You can get further help about this package this way: Make the {mlearning} package available in your R session:
+You can get further help about this package this way: make the {mlearning} package available in your R session:
 
 ``` r
 library("mlearning")

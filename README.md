@@ -54,7 +54,7 @@ should compile and install {mlearning}.
 
 ## Further explore {mlearning}
 
-You can get further help about this package this way: Make the
+You can get further help about this package this way: make the
 {mlearning} package available in your R session:
 
 ``` r
